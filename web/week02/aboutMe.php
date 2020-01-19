@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-sm-4">
       <h2>Photo of me:</h2>
-      <div class="myImg"><img src="IMG_3381(20200102-082420).jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
+      <div class="myImg"><img src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/p240x240/78672426_876154679453605_4950469581287194624_o.jpg?_nc_cat=104&_nc_ohc=7t0RY29leQYAX8M9YPc&_nc_ht=scontent-sea1-1.xx&_nc_tp=1002&oh=8915addaba80b288637e94259d9a7cdb&oe=5EDA8D01" alt="Fangyi Li" style="width:430px;height:430px;"></div>
       <h3>Related Links</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="https://www.facebook.com/profile.php?id=100011772437006">My Facebook Page</a></li>
