@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-sm-4">
       <h2>Photo of me:</h2>
-      <div class="myImg"><img src="me.jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
+      <div class="myImg"><img src="me.JPG" alt="Fangyi Li" style="width:330px;height:430px;"></div>
       <h3>Related Links</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="https://www.facebook.com/profile.php?id=100011772437006">My Facebook Page</a></li>
