@@ -49,6 +49,7 @@
     </div>
     <div class="col-sm-8">
       <h2>Long in Short</h2>
+      <h5>A brief self-introduction</h5>
       <div class="friedChickenImg"><img src="FriedChicken.jpg" alt="FriedChicken" style="width:900px;height:506px;"></div>
       <p>My name is Fangyi Li, a junior in BYU-Idaho. I am currently studying Software Engineering and hoping to find an internship for next semester. Cooking is my most notable talent and I claim myself a chef. Cajun, fried chicken, BBQ, Chinese, Japanese, Korean...You name it, I will make it.</p>
       <p></p>
