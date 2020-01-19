@@ -68,7 +68,8 @@
         date_default_timezone_set("America/Denver");
         echo "The time is " . date("h:i:sa");
         ?>   
-  
+      <br>
+      
       <!--Grid row-->
       <div class="row">
   
