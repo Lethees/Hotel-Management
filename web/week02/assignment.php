@@ -23,13 +23,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Assignemnts</a>
+      <a class="navbar-brand" href="#">Hotel Management</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="myHomePage.php">Home</a></li>
         <li><a href="aboutMe.php">About me</a></li>
-        <li><a href="#">Page 3</a></li>
+        <li class="active"><a href="#">Assignemnts</a></li>
         <li><a href="#">Page 4</a></li>
         <li><a href="#">Page 5</a></li>
         <li><a href="#">Page 6</a></li>
