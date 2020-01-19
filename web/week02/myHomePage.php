@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-sm-4">
       <h2>Photo of me:</h2>
-      <div class="myImg"><img src="Me.jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
+      <div class="myImg"><img src="Fangyi Li.jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
       <h3>Related Links</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="https://www.facebook.com/profile.php?id=100011772437006">My Facebook Page</a></li>
@@ -50,7 +50,7 @@
     <div class="col-sm-8">
       <h2>Project Proposal</h2>
       <h5>the proposal of the Hotel Management PHP Project, Jan 18, 2020</h5>
-      <div class="hotelImg"><img src="hotel.jpg" alt="hotel" style="width:752px;height:500px;"></div>
+      <div class="hotelImg"><img src="A hotel.jpg" alt="hotel" style="width:752px;height:500px;"></div>
       <p>Designing and creating an online hotel management app that allows the hotel administration to add, retrieve, remove, and change the basic information of the hotel guests, such as check-in and check-out dates, their vehicle parking information, and their room numbers.  </p>
       <p></p>
       <br>

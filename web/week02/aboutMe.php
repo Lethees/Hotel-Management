@@ -39,7 +39,7 @@
   <div class="row">
     <div class="col-sm-4">
       <h2>Photo of me:</h2>
-      <div class="myImg"><img src="Me.jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
+      <div class="myImg"><img src="Fangyi Li.jpg" alt="Fangyi Li" style="width:330px;height:430px;"></div>
       <h3>Related Links</h3>
       <ul class="nav nav-pills nav-stacked">
         <li class="active"><a href="https://www.facebook.com/profile.php?id=100011772437006">My Facebook Page</a></li>
@@ -49,7 +49,7 @@
     </div>
     <div class="col-sm-8">
       <h2>Long in Short</h2>
-      <div class="hotelImg"><img src="FriedChicken.jpg" alt="FriedChicken" style="width:900px;height:506px;"></div>
+      <div class="friedChickenImg"><img src="FriedChicken.jpg" alt="FriedChicken" style="width:900px;height:506px;"></div>
       <p>My name is Fangyi Li, a junior in BYU-Idaho. I am currently studying Software Engineering and hoping to find an internship for next semester. Cooking is my most notable talent and I claim myself a chef. Cajun, fried chicken, BBQ, Chinese, Japanese, Korean...You name it, I will make it.</p>
       <p></p>
       <br>
