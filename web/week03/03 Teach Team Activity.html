@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>03 Teach Team Acitivity</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+
+        <form id="form" action="03 Teach Team Activity.php" method="POST">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" name="name" id="name" placeholder="John Doe"><br>
+
+                <label for="email">Email address</label>
+                <input type="email" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter email"><br>
+
+                <input type="radio" name="major" value="Computer Science">Computer Science<br>
+                <input type="radio" name="major" value="Web Design and Development">Web Design and Development<br>
+                <input type="radio" name="major" value="Computer information Technology">Computer information Technology<br>
+                <input type="radio" name="major" value="Computer Engineering">Computer Engineering<br>
+
+             
+
+                <textarea rows="4" cols="50" name="comments">
+                    Please leave your comment here.
+                </textarea>
++
+                <input type="checkbox" name="continents[]" value="North America"><br>
+                <input type="checkbox" name="continents[]" value="South America"><br>
+                <input type="checkbox" name="continents[]" value="Europe"><br>
+                <input type="checkbox" name="continents[]" value="Asia"><br>
+                <input type="checkbox" name="continents[]" value="Australia"><br>
+                <input type="checkbox" name="continents[]" value="Africa"><br>
+                <input type="checkbox" name="continents[]" value="Antarctica"><br><br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+    </body>
+
+</html>
