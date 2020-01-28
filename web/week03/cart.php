@@ -62,7 +62,7 @@ else
         </form>
     </nav>
     <br>
-    
+
     <div class="container">
   <h2>Your Shopping Cart</h2>         
   <table class="table table-dark table-hover">
@@ -79,7 +79,7 @@ else
 
 <?php foreach ( $_SESSION["cart"] as $i ){ ?>
             <tr>
-                <td><?php echo($_SESSION["products"][$i])?></td>
+                <td><?php echo($products[$i])?></td>
                 <td><img src="<?php echo($_SESSION["image"][$i]); ?>" alt="1" width="100" height="100"></td>
                 <td><p><?php echo($_SESSION["description"][$i]); ?></p></td>
                 <td>$<?php echo($_SESSION["amounts"][$i])?></td>
