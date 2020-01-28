@@ -84,7 +84,7 @@ else
                 <td><p><?php echo($description[$i]); ?></p></td>
                 <td>$<?php echo($_SESSION["amounts"][$i])?></td>
                 <td><?php echo( $_SESSION["qty"][$i] ); ?></td>
-                <td><a href="?delete=<?php echo($i); ?>"><img src="delete-icn.svg." alt="delete"></a></td>
+                <td><a href="?delete=<?php echo($i); ?>"><img src="delete-icn.svg" alt="delete"></a></td>
             </tr>
 
                 <?php $total = $total + $_SESSION["amounts"][$i]; } 
