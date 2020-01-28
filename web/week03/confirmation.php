@@ -4,6 +4,15 @@
   $username = htmlspecialchars($_POST["uname"]);
   $zip = htmlspecialchars($_POST["zip"]);
   $total = 0;
+
+  $products = array("Snow Thrower", "Queen-Sheets", "Router", "Echo Show 5", "Camara", "Ankle Brace");
+$amounts = array("103.08", "27.99", "51.99", "69.99", "22.20", "17.99");
+$description = array("GreenWorks 2600402 Pro 80V 20-Inch Cordless Snow Thrower", 
+"400-Thread-Count 100% Cotton Sheet Pure White Queen-Sheets", "TP-Link AC1750 Smart WiFi Router - Dual Band Gigabit Router",
+ "Echo Show 5 – Compact smart display with Alexa - Charcoal", "AbergBest 21 Mega Pixels 2.7 LCD Rechargeable HD Digital Camera", 
+"TechWare Pro Ankle Brace Compression Sleeve");
+$image = array("1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg");
+
 ?>
 <!DOCTYPE html>
 <html>
