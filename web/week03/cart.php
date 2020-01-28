@@ -89,10 +89,10 @@ else
     <br>
 
     <?php
- if ( isset($_SESSION["cart"]) ) {
+ if ( !empty($_SESSION["cart"]) ) {
    echo "session is set";
+ }
  ?>
-
     <div class="container">
   <h2>Your Shopping Cart</h2>         
   <table class="table table-dark table-hover">
