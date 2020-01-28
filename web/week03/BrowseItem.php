@@ -1,4 +1,67 @@
-<?php session_start(); ?>
+<?php 
+  session_start(); 
+
+  $products = array("Snow Thrower", "Queen-Sheets", "Router", "Echo Show 5", "Camara", "Ankle Brace");
+  $amounts = array("103.08", "27.99", "51.99", "69.99", "22.20", "17.99");
+  $description = array("GreenWorks 2600402 Pro 80V 20-Inch Cordless Snow Thrower", 
+  "400-Thread-Count 100% Cotton Sheet Pure White Queen-Sheets", "TP-Link AC1750 Smart WiFi Router - Dual Band Gigabit Router",
+   "Echo Show 5 – Compact smart display with Alexa - Charcoal", "AbergBest 21 Mega Pixels 2.7 LCD Rechargeable HD Digital Camera", 
+  "TechWare Pro Ankle Brace Compression Sleeve");
+  $image = array("1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg");
+
+//Load up session
+if ( !isset($_SESSION["total"]) ) {
+  $_SESSION["total"] = 0;
+  for ($i=0; $i< count($products); $i++) {
+   $_SESSION["qty"][$i] = 0;
+  $_SESSION["amounts"][$i] = 0;
+ }
+}
+
+//---------------------------
+//Reset
+if ( isset($_GET['reset']) )
+{
+if ($_GET["reset"] == 'true')
+  {
+  unset($_SESSION["qty"]); //The quantity for each product
+  unset($_SESSION["amounts"]); //The amount from each product
+  unset($_SESSION["total"]); //The total cost
+  unset($_SESSION["cart"]); //Which item has been chosen
+  }
+}
+
+//---------------------------
+//Add
+if ( isset($_GET["add"]) )
+  {
+  $i = $_GET["add"];
+  $qty = $_SESSION["qty"][$i] + 1;
+  $_SESSION["amounts"][$i] = $amounts[$i] * $qty;
+  $_SESSION["cart"][$i] = $i;
+  $_SESSION["qty"][$i] = $qty;
+}
+
+ //---------------------------
+ //Delete
+ if ( isset($_GET["delete"]) )
+  {
+  $i = $_GET["delete"];
+  $qty = $_SESSION["qty"][$i];
+  $qty--;
+  $_SESSION["qty"][$i] = $qty;
+  //remove item if quantity is zero
+  if ($qty == 0) {
+   $_SESSION["amounts"][$i] = 0;
+   unset($_SESSION["cart"][$i]);
+ }
+else
+ {
+  $_SESSION["amounts"][$i] = $amounts[$i] * $qty;
+ }
+}
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,11 +72,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="week03.js"></script>
   </head>
-  <body>
+  <body>    
     <div class="jumbotron text-center">
         <h1>Welcome to Amazom.com</h1>
-        <p>We do everything that Amazon does, but in a simplified way!</p> 
+        <p>We do everything that Amazon does, but in a simple way!</p> 
     </div>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
         <ul class="navbar-nav">
@@ -21,7 +85,7 @@
                 <a class="nav-link" href="#">Amazom</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="cart.php">Shopping Cart</a>
+                <a class="nav-link" href="">About Us</a>
             </li>
         </ul>
         <form class="form-inline" action="">
@@ -30,56 +94,27 @@
         </form>
     </nav>
     <br>
-
-    <form method="post" action="cart.php">
+    
+      <form method="post" action="cart.php">
         <div class="container">
         <p>Showing 1-6 of 1000 results<p>
-            <div class="row">
+        <button name="button" type="submit" class="btn btn-outline-dark" id="btnB" value="submit">Return to the Cart
+</button>
+
+<div class="row">
+<?php for ($i = 0; $i < count($products); $i++) { ?>
+          
                 <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="1.jpg" alt="1" width="260" height="260">
-                    <p>GreenWorks 2600402 Pro 80V 20-Inch Cordless Snow Thrower</p>
+                    <img src="<?php echo($image[$i]); ?>" alt="1" width="260" height="260">
+                    <p><?php echo($description[$i]); ?></p>
                     <hr>
-                    <p>$103.08</p>
-                    <input type="checkbox" name="item[]" value="Snow Thrower"> Add it to the cart<br>
+                    <p>$<?php echo($amounts[$i]); ?></p>
+                    <a href="?add=<?php echo($i); ?>">Add to cart</a><br>
                 </div>
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="2.jpg" alt="2" width="260" height="260">
-                    <p>400-Thread-Count 100% Cotton Sheet Pure White Queen-Sheets</p>
-                    <hr>
-                    <p>$27.99</p>
-                    <input type="checkbox" name="item[]" value="Queen-Sheets"> Add it to the cart<br>
-                </div>
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="3.jpg" alt="3" width="260" height="260">     
-                    <p>TP-Link AC1750 Smart WiFi Router - Dual Band Gigabit Router</p>
-                    <hr>
-                    <p>$51.99</p>
-                    <input type="checkbox" name="item[]" value="Router"> Add it to the cart<br>
-                </div>
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="4.jpg" alt="4" width="260" height="260">        
-                    <p>Echo Show 5 – Compact smart display with Alexa - Charcoal</p>
-                    <hr>
-                    <p>$69.99</p>
-                    <input type="checkbox" name="item[]" value="Echo Show 5"> Add it to the cart<br>
-                </div>
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="5.jpg" alt="5" width="260" height="260">        
-                    <p>AbergBest 21 Mega Pixels 2.7" LCD Rechargeable HD Digital Camera</p>
-                    <hr>
-                    <p>$22.20</p>
-                    <input type="checkbox" name="item[]" value="Camera"> Add it to the cart<br>
-                </div>
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="6.jpg" alt="6" width="260" height="260">        
-                    <p>TechWare Pro Ankle Brace Compression Sleeve</p>
-                    <hr>
-                    <p>$17.99</p>
-                    <input type="checkbox" name="item[]" value="Ankle Brace"> Add it to the cart<br>
-                </div>    
+            <?php } ?>
             </div>
         </div>
-    </form>
+</form>
     
   <!-- Site footer -->
   <footer class="site-footer">
