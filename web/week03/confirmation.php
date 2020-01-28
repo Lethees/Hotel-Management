@@ -65,9 +65,9 @@ $image = array("1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg");
 
 <?php foreach ( $_SESSION["cart"] as $i ){ ?>
             <tr>
-                <td><?php echo($_SESSION["products"][$i])?></td>
-                <td><img src="<?php echo($_SESSION["image"][$i]); ?>" alt="1" width="100" height="100"></td>
-                <td><p><?php echo($_SESSION["description"][$i]); ?></p></td>
+                <td><?php echo($products][$i])?></td>
+                <td><img src="<?php echo($image[$i]); ?>" alt="1" width="100" height="100"></td>
+                <td><p><?php echo($description[$i]); ?></p></td>
                 <td>$<?php echo($_SESSION["amounts"][$i])?></td>
                 <td><?php echo( $_SESSION["qty"][$i] ); ?></td>
             </tr>
