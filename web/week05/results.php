@@ -52,7 +52,7 @@ echo "asdwad + $last_name + $phone + 123123";
     <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT * FROM customer WHERE last_name = $last_name OR phone = $phone") as $fRow)
+   foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = $last_name") as $fRow)
    {
     $id = $fRow["id"];   
     $first_name = $fRow["first_name"];
