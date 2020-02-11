@@ -51,7 +51,7 @@
    $guest->execute();
    while ($fRow = $guest->fetch(PDO::FETCH_ASSOC))
    {
-    $id = $fROW["id"];
+    $id = $fRow["id"];
     $first_name = $fRow["first_name"];
       $last_name = $fRow["last_name"];
       $phone = $fRow["phone"];
@@ -66,6 +66,7 @@
     echo "</tr>";
     echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
     }
+    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
             ?>
             </tbody>
   </table>
