@@ -1,5 +1,6 @@
 <?php
-    $id = $_POST["$id"];
+    $guest_id = $_POST["$id"];
+    echo(guest_id);
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,7 +52,7 @@
     <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $id") as $fRow)
+   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
     $check_in_date = $fRow["check_in_date"];

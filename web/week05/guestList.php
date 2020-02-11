@@ -62,7 +62,7 @@
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo "<td><input type='submit' name='$id'>Check Out Their Reservation</td>";
+    echo "<td><input type='button' name='$id'>Check Out Their Reservation</td>";
     echo "</tr>";
     }
     
