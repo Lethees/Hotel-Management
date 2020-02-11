@@ -1,7 +1,6 @@
 <?php
 $last_name = $_POST['LastName'];
 $phone = $_POST['phone'];
-echo "asdwad + $last_name + $phone + 123123";
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,13 +57,12 @@ echo "asdwad + $last_name + $phone + 123123";
     $first_name = $fRow["first_name"];
     $last_name = $fRow["last_name"];
       $phone = $fRow["phone"];
-      echo " awojdawjod + $id + $first_name + $last_name + $phone";
 
     echo "<tr>";
-    echo "<td>$reservation_id</td>"; 
-    echo "<td>$check_in_date</td>";
-    echo "<td>$check_out_date</td>";
-    echo "<td>$room_number</td>";
+    echo "<td>$id</td>"; 
+    echo "<td>$first_name</td>";
+    echo "<td>$last_name</td>";
+    echo "<td>$phone</td>";
     echo "<td><a href='detail.php?id=$id'>Check Reservation Details</a></td>";
     echo "</tr>";
     }
