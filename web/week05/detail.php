@@ -36,7 +36,7 @@ $guest_id = $_GET['id'];
 
     <form method="post" action="detail.php">  
     <div class="container">
-  <h2>Guest List</h2>       
+  <h2>Reservation List</h2>       
   <table class="table table-dark table-hover">
     <thead>
       <tr>
