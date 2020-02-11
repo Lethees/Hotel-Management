@@ -1,3 +1,6 @@
+<?php
+    $id = $_POST["$id"];
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,11 +39,11 @@
   <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>Guest ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Reservation ID</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
+        <th>Room Number</th>
         <th>Phone Number</th>
-        <th>Reservation Detail</th>
       </tr>
     </thead>
     <tbody>
@@ -48,21 +51,20 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $customers = $db->prepare("SELECT * FROM customer");
-   $customers->execute();
-   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
+   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $id") as $fRow)
    {
-    $id = $fRow["id"];
-    $first_name = $fRow["first_name"];
-      $last_name = $fRow["last_name"];
+    $reservation_id = $fRow["id"];   
+    $check_in_date = $fRow["check_in_date"];
+    $check_out_date = $fRow["check_out_date"];
+      $room_number = $fRow["room_number"];
       $phone = $fRow["phone"];
 
     echo "<tr>";
-    echo "<td>$id</td>";
-    echo "<td>$first_name</td>";
-    echo "<td>$last_name</td>";
+    echo "<td>$reservation_id</td>"; 
+    echo "<td>$check_in_date</td>";
+    echo "<td>$check_out_date</td>";
+    echo "<td>$room_number</td>";
     echo "<td>$phone</td>";
-    echo "<td><input type='submit' name='$id'></td>";
     echo "</tr>";
     }
     
