@@ -47,34 +47,23 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $guest = $db->prepare("SELECT * FROM customer");
-   $guest->execute();
-   while ($fRow = $guest->fetch(PDO::FETCH_ASSOC))
+   $customers = $db->prepare("SELECT * FROM customer");
+   $customers->execute();
+   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
    {
     $id = $fRow["id"];
     $first_name = $fRow["first_name"];
       $last_name = $fRow["last_name"];
       $phone = $fRow["phone"];
-      $roomNumber = $db->prepare("SELECT roomNumber FROM reservation");
-      $roomNumber->execute();
     echo "<tr>";
     echo "<td>$id</td>";
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo "<td>$roomNumber</td>";
     echo "</tr>";
-    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
     }
-    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
-            ?>
-            <?php
-            foreach ($db->query('SELECT first_name, last_name FROM customer') as $row)
-            {
-              echo 'first_name: ' . $row['first_name'];
-              echo ' last_name: ' . $row['last_name'];
-              echo '<br/>';
-            }
+    
+
             ?>
             </tbody>
   </table>
