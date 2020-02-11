@@ -1,3 +1,7 @@
+<?php
+$last_name = $_POST['LastName'];
+$phone = $_POST['phone'];
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,27 +34,47 @@
     </nav>
     <br>
 
-    <form method="post" action="results.php">
     <div class="container">
-    <h2>Search Guests by Last Name or Phone Number</h2> 
-    <form action="confirmation.php" method="post" class="was-validated">
-    <div class="form-group">
-      <label for="LastName">Last Name:</label>
-      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g 'Smith.'" name="LastName" >
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g '202-595-4442'" name="phone" >
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
-    </div>
-    <button type="submit" class="btn btn-dark">Submit</button>
-    <br>
-    <br>
-  </div>
-</form>
+  <h2>Results</h2>       
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Guest ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Reservation Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <?php
+   require "connection.php";
+   $db = get_db();
+   $customers = $db->prepare("SELECT * FROM customer WHERE last_name = $last_name OR phone = $phone");
+   $customers->execute();
+   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
+   {
+    $id = $fRow["id"];
+    $first_name = $fRow["first_name"];
+      $last_name = $fRow["last_name"];
+      $phone = $fRow["phone"];
+
+    echo "<tr>";
+    echo "<td>$id</td>";
+    echo "<td>$first_name</td>";
+    echo "<td>$last_name</td>";
+    echo "<td>$phone</td>";
+    echo "<td><a href='detail.php?id=$id'>Check Reservation Details</a></td>";
+    echo "</tr>";
+    }
+    
+
+            ?>
+            </tbody>
+  </table>
+</div>
+
 
     
   <!-- Site footer -->

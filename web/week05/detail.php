@@ -34,7 +34,6 @@ $guest_id = $_GET['id'];
     </nav>
     <br>
 
-    <form method="post" action="detail.php">  
     <div class="container">
   <h2>Reservation List</h2>       
   <table class="table table-dark table-hover">
@@ -71,7 +70,7 @@ $guest_id = $_GET['id'];
             </tbody>
   </table>
 </div>
-</form>
+
 
     
   <!-- Site footer -->
