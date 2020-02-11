@@ -52,24 +52,21 @@ echo "asdwad + $last_name + $phone + 123123";
     <?php
    require "connection.php";
    $db = get_db();
-   $customers = $db->prepare("SELECT * FROM customer WHERE last_name = $last_name OR phone = $phone");
-   $customers->execute();
-   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
+   foreach ($db->query("SELECT * FROM customer WHERE last_name = $last_name OR phone = $phone") as $fRow)
    {
-    $id = $fRow["id"];
+    $id = $fRow["id"];   
     $first_name = $fRow["first_name"];
-      $last_name = $fRow["last_name"];
+    $last_name = $fRow["last_name"];
       $phone = $fRow["phone"];
 
     echo "<tr>";
-    echo "<td>$id</td>";
-    echo "<td>$first_name</td>";
-    echo "<td>$last_name</td>";
-    echo "<td>$phone</td>";
+    echo "<td>$reservation_id</td>"; 
+    echo "<td>$check_in_date</td>";
+    echo "<td>$check_out_date</td>";
+    echo "<td>$room_number</td>";
     echo "<td><a href='detail.php?id=$id'>Check Reservation Details</a></td>";
     echo "</tr>";
     }
-    
 
             ?>
             </tbody>
