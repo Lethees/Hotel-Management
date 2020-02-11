@@ -47,7 +47,7 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $guest = $db->prepare("SELECT * FROM customer");
+   $guest = $db->prepare("SELECT id, first_name, last_name, phone FROM customer");
    $guest->execute();
    while ($fRow = $guest->fetch(PDO::FETCH_ASSOC))
    {
@@ -67,6 +67,14 @@
     echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
     }
     echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
+            ?>
+            <?php
+            foreach ($db->query('SELECT username, password FROM note_user') as $row)
+            {
+              echo 'user: ' . $row['username'];
+              echo ' password: ' . $row['password'];
+              echo '<br/>';
+            }
             ?>
             </tbody>
   </table>
