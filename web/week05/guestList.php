@@ -75,6 +75,7 @@
               echo ' password: ' . $row['last_name'];
               echo '<br/>';
             }
+            echo 'user: ' . $row['first_name'];
             ?>
             </tbody>
   </table>
