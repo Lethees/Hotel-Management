@@ -50,7 +50,6 @@
                     <div class="btn1">
                     <button type="button" onclick="window.location.href = '<?php echo($web[$i]); ?>'" class="btn btn-<?php echo($button[$i]); ?>"><?php echo($actions[$i]); ?></button>
 </div>
-                    <hr>
                 </div>
             <?php } ?>
             </div>
