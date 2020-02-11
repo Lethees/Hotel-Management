@@ -80,6 +80,16 @@
             </tbody>
   </table>
 </div>
+<?php
+            foreach ($db->query('SELECT first_name, last_name FROM customer') as $row)
+            {
+              echo 'user: ' . $row['first_name'];
+              echo ' password: ' . $row['last_name'];
+              echo '<br/>';
+            }
+            echo 'user: ' . $row['first_name'];
+            echo "aaaaaaaaaaaaaaa";
+            ?>
 
     
   <!-- Site footer -->
