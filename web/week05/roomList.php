@@ -1,10 +1,3 @@
-<?php
-  $actions = array("Guest List", "Room List", "Search Guest");
-  $image = array("1.png", "2.png", "3.png");
-  $button = array("dark", "info", "success");
-  $web = array("guestList.php", "roomList.php", "search.php");
-
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -19,7 +12,7 @@
   <body>    
     <div class="jumbotron text-center">
         <h1>Welcome to Pines Inn, Annandale, VA</h1>
-        <p>This menu page is only accessible for Pines Inn Administration staff</p> 
+        <p>This page is only accessible for Pines Inn Administration staff</p> 
     </div>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
         <ul class="navbar-nav">
@@ -27,7 +20,7 @@
                 <a class="nav-link" href="#">Pines Inn</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">About Us</a>
+                <a class="nav-link" href="management.php">Menu</a>
             </li>
         </ul>
         <form class="form-inline" action="">
@@ -36,25 +29,39 @@
         </form>
     </nav>
     <br>
-    
 
-        <div class="container">
-        <button name="button" type="submit" class="btn btn-outline-dark" id="btnB" value="submit">Choose One of the Following Options:
-</button>
+    <div class="container">
+  <h2>Guest List</h2>         
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Room ID</th>
+        <th>Room Number</th>
+        <th>Is it occupied</th>
+      </tr>
+    </thead>
+    <tbody>
 
-<div class="row">
-<?php for ($i = 0; $i < count($actions); $i++) { ?>
-          
-                <div class="col-sm-3 p-3 my-3 text-black">
-                    <img src="<?php echo($image[$i]); ?>" alt="1" width="128" height="128">
-                    <div class="btn1">
-                    <button type="button" onclick="window.location.href = '<?php echo($web[$i]); ?>'" class="btn btn-<?php echo($button[$i]); ?>"><?php echo($actions[$i]); ?></button>
+    <?php
+   require "connection.php";
+   $db = get_db();
+   $rooms = $db->prepare("SELECT * FROM room");
+   $rooms->execute();
+   while ($fRow = $rooms->fetch(PDO::FETCH_ASSOC))
+   {
+    $id = $fROW["id"];
+    $is_occupied = $fRow["is_occupied"];
+      $roomNumber = $fRow["number"];
+    echo "<tr>";
+    echo "<td>$id</td>";
+    echo "<td>$is_occupied</td>";
+    echo "<td>$roomNumber</td>";
+    echo "</tr>";
+    }
+            ?>
+            </tbody>
+  </table>
 </div>
-                    <hr>
-                </div>
-            <?php } ?>
-            </div>
-        </div>
 
     
   <!-- Site footer -->
