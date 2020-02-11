@@ -54,8 +54,8 @@
       $roomNumber = $fRow["number"];
     echo "<tr>";
     echo "<td>$id</td>";
+    echo "<td>$roomNumber/td>";
     echo "<td>$is_occupied</td>";
-    echo "<td>$roomNumber</td>";
     echo "</tr>";
     }
             ?>
