@@ -1,6 +1,6 @@
 <?php
 $guest_id = $_GET['id'];
-
+echo "wsjkdas + $guest_id";
 ?>
 <!DOCTYPE html>
 <html>
