@@ -114,7 +114,7 @@ INSERT INTO        room ( is_occupied
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '209');
 
 INSERT INTO        room ( is_occupied
