@@ -35,7 +35,6 @@
   <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>Room ID</th>
         <th>Room Number</th>
         <th>Is it occupied</th>
       </tr>
@@ -49,12 +48,11 @@
    $rooms->execute();
    while ($fRow = $rooms->fetch(PDO::FETCH_ASSOC))
    {
-    $id = $fROW["id"];
     $is_occupied = $fRow["is_occupied"];
       $roomNumber = $fRow["number"];
     echo "<tr>";
     echo "<td>$id</td>";
-    echo "<td>$roomNumber/td>";
+    echo "<td>$roomNumber</td>";
     echo "<td>$is_occupied</td>";
     echo "</tr>";
     }
