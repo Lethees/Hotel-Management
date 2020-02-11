@@ -58,7 +58,7 @@
 
       $room_number = $db->prepare("SELECT room_number FROM reservation WHERE customer_id = $id");
       $room_number->execute();
-      while ($rRow = $relationships->fetch(PDO::FETCH_ASSOC))
+      while ($rRow = $room_number->fetch(PDO::FETCH_ASSOC))
       {
          $room_number = $rRow["room_number"];
       }
