@@ -62,7 +62,7 @@
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo "<td><button name='$id' type='submit' class='btn btn-outline-dark' id='btnB' value='submit'>Check Out Their Reservation<button></td>";
+    echo "<td><button name='$id' type='submit' class='btn btn-outline-dark' id='btnB' value='submit'>Check Out Their Reservation</button></td>";
     echo "</tr>";
     }
     

@@ -1,6 +1,6 @@
 <?php
     $guest_id = $_POST["$id"];
-    echo(guest_id);
+    echo($guest_id);
 ?>
 <!DOCTYPE html>
 <html>
