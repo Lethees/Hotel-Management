@@ -1,6 +1,5 @@
 <?php
 $guest_id = $_GET['id'];
-echo "wsjkdas + $guest_id";
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +43,8 @@ echo "wsjkdas + $guest_id";
         <th>Check-In Date</th>
         <th>Check-Out Date</th>
         <th>Room Number</th>
-        <th>Phone Number</th>
+        <th>Room Type</th>
+        <th>Price(per day)</th>
       </tr>
     </thead>
     <tbody>
@@ -52,20 +52,24 @@ echo "wsjkdas + $guest_id";
     <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT r.id, r.check_in_date, r.check_out_date, r.room_number, rt.room_type, rt.price  
+   FROM reservation r JOIN room ON r.room_number = room.number 
+   JOIN roomType rt ON room.number = rt.number WHERE customer_id = $guest_id") as $fRow)
    {
-    $reservation_id = $fRow["id"];   
-    $check_in_date = $fRow["check_in_date"];
-    $check_out_date = $fRow["check_out_date"];
-      $room_number = $fRow["room_number"];
-      $phone = $fRow["phone"];
+    $reservation_id = $fRow["r.id"];   
+    $check_in_date = $fRow["r.check_in_date"];
+    $check_out_date = $fRow["r.check_out_date"];
+      $room_number = $fRow["r.room_number"];
+      $type = $fRow["rt.room_type"];
+      $price = $fRow["rt.price"];
 
     echo "<tr>";
     echo "<td>$reservation_id</td>"; 
     echo "<td>$check_in_date</td>";
     echo "<td>$check_out_date</td>";
     echo "<td>$room_number</td>";
-    echo "<td>$phone</td>";
+    echo "<td>$type</td>";
+    echo "<td>$price</td>";
     echo "</tr>";
     }
     
