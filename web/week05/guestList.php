@@ -29,8 +29,7 @@
         </form>
     </nav>
     <br>
-
-    <form method="post" action="detail.php">  
+ 
     <div class="container">
   <h2>Guest List</h2>       
   <table class="table table-dark table-hover">
@@ -62,7 +61,7 @@
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo "<td><input type='submit' value='Check Out Their Reservation' name='$id'></td>";
+    echo ('<a href="detail.php?id=' . $id . '">' . $last_name . '</a>');
     echo "</tr>";
     }
     
@@ -71,7 +70,6 @@
             </tbody>
   </table>
 </div>
-</form>
 
     
   <!-- Site footer -->

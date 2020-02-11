@@ -1,11 +1,6 @@
 <?php
-if(isset($_POST["$id"])){
-    $guest_id = $_POST["$id"];
-    echo($guest_id);
-}
-else{
-    echo "Not set!";
-}
+$guest_id = $_GET['id'];
+
 ?>
 <!DOCTYPE html>
 <html>
