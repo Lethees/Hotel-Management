@@ -31,7 +31,8 @@
     <br>
  
     <div class="container">
-  <h2>Guest List</h2>       
+  <h2>Guest List</h2>
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>       
   <table class="table table-dark table-hover">
     <thead>
       <tr>

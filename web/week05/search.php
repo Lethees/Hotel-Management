@@ -30,10 +30,10 @@
     </nav>
     <br>
 
-    <form method="post" action="results.php">
     <div class="container">
     <h2>Search Guests by Last Name or Phone Number</h2> 
-    <form action="confirmation.php" method="post" class="was-validated">
+    <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
+    <form method="post" action="results.php">
     <div class="form-group">
       <label for="LastName">Last Name:</label>
       <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >

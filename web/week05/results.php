@@ -35,7 +35,8 @@ $phone = $_POST['phone'];
     <br>
 
     <div class="container">
-  <h2>Results</h2>       
+  <h2>Results</h2>
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search.php';">Return to the Searching Page</button>       
   <table class="table table-dark table-hover">
     <thead>
       <tr>
