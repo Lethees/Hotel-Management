@@ -47,9 +47,9 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $guests = $db->prepare("SELECT * FROM customer");
-   $guests->execute();
-   while ($fRow = $guests->fetch(PDO::FETCH_ASSOC))
+   $guest = $db->prepare("SELECT * FROM customer");
+   $guest->execute();
+   while ($fRow = $guest->fetch(PDO::FETCH_ASSOC))
    {
     $id = $fROW["id"];
     $first_name = $fRow["first_name"];
