@@ -35,7 +35,6 @@
   <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>Guest ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Phone Number</th>
@@ -63,7 +62,6 @@
          $room_number = $rRow["room_number"];
       }
     echo "<tr>";
-    echo "<td>$id</td>";
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
