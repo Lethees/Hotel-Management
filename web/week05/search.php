@@ -36,13 +36,13 @@
     <form action="confirmation.php" method="post" class="was-validated">
     <div class="form-group">
       <label for="LastName">Last Name:</label>
-      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g 'Smith.'" name="LastName" >
+      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
     </div>
     <div class="form-group">
       <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g '202-595-4442'" name="phone" >
+      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone" >
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
     </div>
