@@ -61,7 +61,7 @@
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo '<td><a href = "detail.php?id='. $id . '&last_name=' . $last_name . '"></a></td>';
+    echo '<a href = "detail.php?last_name='. $last_name . '&id=' . $id . '"></a>';
     echo "</tr>";
     }
     
