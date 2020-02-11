@@ -47,14 +47,14 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $guest = $db->prepare("SELECT id, first_name, last_name, phone FROM customer");
+   $guest = $db->prepare("SELECT * FROM customer");
    $guest->execute();
    while ($fRow = $guest->fetch(PDO::FETCH_ASSOC))
    {
-    $id = $fRow["id"];
-    $first_name = $fRow["first_name"];
-      $last_name = $fRow["last_name"];
-      $phone = $fRow["phone"];
+    $id = $fRow['id'];
+    $first_name = $fRow['first_name'];
+      $last_name = $fRow['last_name'];
+      $phone = $fRow['phone'];
       $roomNumber = $db->prepare("SELECT roomNumber FROM reservation");
       $roomNumber->execute();
     echo "<tr>";
@@ -69,10 +69,10 @@
     echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
             ?>
             <?php
-            foreach ($db->query('SELECT username, password FROM note_user') as $row)
+            foreach ($db->query('SELECT first_name, last_name FROM customer') as $row)
             {
-              echo 'user: ' . $row['username'];
-              echo ' password: ' . $row['password'];
+              echo 'user: ' . $row['first_name'];
+              echo ' password: ' . $row['last_name'];
               echo '<br/>';
             }
             ?>
