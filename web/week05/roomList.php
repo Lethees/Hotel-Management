@@ -50,12 +50,12 @@
    while ($fRow = $rooms->fetch(PDO::FETCH_ASSOC))
    {
     $id = $fRow["id"];
-    $is_occupied = $fRow["is_occupied"];
+    $occupied = $fRow["is_occupied"];
       $roomNumber = $fRow["number"];
     echo "<tr>";
     echo "<td>$id</td>";
     echo "<td>$roomNumber</td>";
-    echo "<td>$is_occupied</td>";
+    echo "<td>$occupied</td>";
     echo "</tr>";
     }
     
