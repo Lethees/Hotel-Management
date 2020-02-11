@@ -35,6 +35,7 @@
   <table class="table table-dark table-hover">
     <thead>
       <tr>
+        <th>Room ID</th>
         <th>Room Number</th>
         <th>Is it occupied</th>
       </tr>
@@ -56,7 +57,6 @@
     echo "<td>$roomNumber</td>";
     echo "<td>$is_occupied</td>";
     echo "</tr>";
-    echo "<p>$id $is_occupied is my $roomNumber </p>";
     }
     
 
