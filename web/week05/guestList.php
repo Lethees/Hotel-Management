@@ -64,6 +64,7 @@
     echo "<td>$phone</td>";
     echo "<td>$roomNumber</td>";
     echo "</tr>";
+    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
     }
             ?>
             </tbody>

@@ -48,6 +48,7 @@
    $rooms->execute();
    while ($fRow = $rooms->fetch(PDO::FETCH_ASSOC))
    {
+    $id = $fRow["id"];
     $is_occupied = $fRow["is_occupied"];
       $roomNumber = $fRow["number"];
     echo "<tr>";
@@ -55,7 +56,10 @@
     echo "<td>$roomNumber</td>";
     echo "<td>$is_occupied</td>";
     echo "</tr>";
+    echo "<p>$id $is_occupied is my $roomNumber </p>";
     }
+    
+
             ?>
             </tbody>
   </table>
