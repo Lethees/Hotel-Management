@@ -37,7 +37,7 @@
       <tr>
         <th>Room ID</th>
         <th>Room Number</th>
-        <th>Is it occupied</th>
+        <th>Occupied</th>
       </tr>
     </thead>
     <tbody>

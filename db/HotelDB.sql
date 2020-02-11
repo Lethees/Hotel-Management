@@ -15,7 +15,7 @@ CREATE TABLE customer (
 
 CREATE TABLE room (
     id             SERIAL        NOT NULL PRIMARY KEY
-,   is_occupied    BOOLEAN       NOT NULL
+,   is_occupied    VARCHAR(50)   NOT NULL
 ,   number         INT           NOT NULL UNIQUE
 );
 
@@ -74,42 +74,42 @@ INSERT INTO    customer ( first_name
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '201');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '202');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '203');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '204');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '205');
                     
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '206');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '207');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '208');
 
 INSERT INTO        room ( is_occupied
@@ -119,12 +119,12 @@ INSERT INTO        room ( is_occupied
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '210');
 
 INSERT INTO        room ( is_occupied
                         , number) 
-                 VALUES ( False
+                 VALUES ( 'No'
                         , '211');
 
 INSERT INTO    roomType ( price

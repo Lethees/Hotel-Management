@@ -64,32 +64,11 @@
     echo "<td>$phone</td>";
     echo "<td>$roomNumber</td>";
     echo "</tr>";
-    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
     }
-    echo "<p>$first_name $last_name is my $phone + $roomNumber</p>";
-            ?>
-            <?php
-            foreach ($db->query('SELECT first_name, last_name FROM customer') as $row)
-            {
-              echo 'user: ' . $row['first_name'];
-              echo ' password: ' . $row['last_name'];
-              echo '<br/>';
-            }
-            echo 'user: ' . $row['first_name'];
             ?>
             </tbody>
   </table>
 </div>
-<?php
-            foreach ($db->query('SELECT first_name, last_name FROM customer') as $row)
-            {
-              echo 'user: ' . $row['first_name'];
-              echo ' password: ' . $row['last_name'];
-              echo '<br/>';
-            }
-            echo 'user: ' . $row['first_name'];
-            echo "aaaaaaaaaaaaaaa";
-            ?>
 
     
   <!-- Site footer -->
