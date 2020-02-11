@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST[$id])){
-    $guest_id = $_POST[$id];
+if(isset($_POST["$id"])){
+    $guest_id = $_POST["$id"];
     echo($guest_id);
 }
 else{
