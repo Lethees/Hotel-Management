@@ -1,6 +1,7 @@
 <?php
 $last_name = $_POST['LastName'];
 $phone = $_POST['phone'];
+echo "asdwad + $last_name + $phone + 123123";
 ?>
 <!DOCTYPE html>
 <html>
