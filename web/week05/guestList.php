@@ -63,6 +63,7 @@
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
     echo "<td><a href='detail.php?id=$id'>Check Reservation Details</a></td>";
+    echo "<td><a href='parkingInformation.php?id=$id'>Check Parking Info</a></td>";
     echo "</tr>";
     }
     
