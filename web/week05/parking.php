@@ -48,27 +48,27 @@
 
       <div class="form-group">
         <label for="validId">Make:</label>
-        <input type="text" class="form-control" id="Make" name="Make" >
+        <input type="text" class="form-control" id="make" name="make" >
         <div class="valid-feedback">Valid.</div>
       </div>
 
       
       <div class="form-group">
         <label for="validId">Model:</label>
-        <input type="text" class="form-control" id="Model" name="Model" >
+        <input type="text" class="form-control" id="model" name="model" >
         <div class="valid-feedback">Valid.</div>
       </div>
 
       
       <div class="form-group">
         <label for="validId">Year:</label>
-        <input type="text" class="form-control" id="Year" name="Year" >
+        <input type="text" class="form-control" id="year" name="year" >
         <div class="valid-feedback">Valid.</div>
       </div>
 
       <div class="form-group">
         <label for="validId">License Plate:</label>
-        <input type="text" class="form-control" id="LicensePlate" name="LicensePlate" >
+        <input type="text" class="form-control" id="license_plate" name="license_plate" >
         <div class="valid-feedback">Valid.</div>
       </div>
 

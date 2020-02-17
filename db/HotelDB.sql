@@ -38,10 +38,10 @@ CREATE TABLE reservation (
 
 CREATE TABLE parking (
     id             SERIAL      NOT NULL PRIMARY KEY
-,   make           VARCHAR(50) 
-,   model          VARCHAR(50) 
-,   year           INT         
-,   license_plate  VARCHAR(50)
+,   make           VARCHAR(50) NOT NULL
+,   model          VARCHAR(50) NOT NULL
+,   year           INT         NOT NULL 
+,   license_plate  VARCHAR(50) NOT NULL
 ,   customer_id    INT         NOT NULL REFERENCES customer(id)
 );
 
