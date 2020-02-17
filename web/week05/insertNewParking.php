@@ -11,7 +11,7 @@ $db = get_db();
 try
 {
 	$query = 'INSERT INTO parking (make, model, year, license_plate, customer_id) 
-	VALUES (:make, :model, :year, :license_plate, customer_id)';
+	VALUES (:make, :model, :year, :license_plate, :customer_id)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':make', $make);
 	$statement->bindValue(':model', $model);
