@@ -41,6 +41,7 @@
         <th>Last Name</th>
         <th>Phone Number</th>
         <th>Reservation Detail</th>
+        <th>parking Information</th>
       </tr>
     </thead>
     <tbody>
