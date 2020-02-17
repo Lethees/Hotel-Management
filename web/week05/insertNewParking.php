@@ -1,8 +1,8 @@
 <?php
-$Make = $_POST['Make'];
-$Model = $_POST['Model'];
-$Year = $_POST['Year'];
-$LicensePlate = $_POST['LicensePlate'];
+$make = $_POST['Make'];
+$model = $_POST['Model'];
+$year = $_POST['Year'];
+$licensePlate = $_POST['LicensePlate'];
 $customerID = $_POST['customerID'];
 
 require("connection.php");
@@ -13,10 +13,10 @@ try
 	$query = 'INSERT INTO parking (Make, Model, Year, license_plate, customer_id) 
     VALUES (:Make, :Model, :Year, :LicensePlate. :customerID)';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':Make', $Make);
-	$statement->bindValue(':Model', $Model);
-  $statement->bindValue(':Year', $Year);
-  $statement->bindValue(':LicensePlate', $LicensePlate);
+	$statement->bindValue(':Make', $make);
+	$statement->bindValue(':Model', $model);
+  $statement->bindValue(':Year', $year);
+  $statement->bindValue(':LicensePlate', $licensePlate);
   $statement->bindValue(':customerID', $customerID);
 	$statement->execute();
 	

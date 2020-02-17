@@ -79,7 +79,7 @@
         <br>
     <br>
 
-    <button type="submit" class="btn btn-dark">Return to menu</button>
+    <button type="submit" class="btn btn-dark">Submit and Return to menu</button>
     <br>
     <br>
     </form>

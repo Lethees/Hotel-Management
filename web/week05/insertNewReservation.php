@@ -10,7 +10,7 @@ $db = get_db();
 try
 {
 	$query = 'INSERT INTO reservation (check_in_date, check_out_date, customer_id, room_number) 
-    VALUES (:checkInDate, :checkOutDate, :customerID, :RoomNumber)';
+	VALUES (:checkInDate, :checkOutDate, :customerID, :RoomNumber)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':checkInDate', $checkInDate);
 	$statement->bindValue(':checkOutDate', $checkOutDate);

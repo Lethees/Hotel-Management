@@ -35,7 +35,7 @@
     <br>
 
     <div class="container">
-     <h2>A new Reservation for the new registered guest</h2>
+     <h2>Enter new vehicle information</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="insertNewParking.php">
 
@@ -73,7 +73,7 @@
       </div>
 
 
-    <button type="submit" class="btn btn-dark">Return to menu</button>
+    <button type="submit" class="btn btn-dark">Submit and Return to menu</button>
     <br>
     <br>
     </form>
