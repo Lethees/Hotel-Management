@@ -1,35 +1,5 @@
 <?php
-$FirstName = $_POST['FirstName'];
-$LastName = $_POST['LastName'];
-$phone = $_POST['phone'];
-$validId = $_POST['validId'];
-
-require("connection.php");
-$db = get_db();
-
-try
-{
-	$query = 'INSERT INTO customer (first_name, last_name, phone, valid_id) VALUES (:first, :last, :phone, :validId)';
-	$statement = $db->prepare($query);
-	$statement->bindValue(':first', $FirstName);
-	$statement->bindValue(':last', $LastName);
-  $statement->bindValue(':phone', $phone);
-  $statement->bindValue(':validId', $validId);
-	$statement->execute();
-	
-	// SELECT c.relname FROM pg_class c WHERE c.relkind = 'S';   -- display all sequences
-	// get id of last inserted row - save in $userId
-	// $userId = $db->lastInsertId("w6_user_id_seq");
-}
-catch (Exception $ex)
-{
-	echo "Error with DB. Details: $ex";
-	die();
-}
-//header("Location: display.php/?personId=$userId");
-
-//die(); 
-
+$customerId = $_GET['customerId'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -70,20 +40,16 @@ catch (Exception $ex)
     <div class="container">
      <h2>A new Reservation for the new registered guest</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="parking.php">
+    <form method="post" action="insertNewReservation.php">
     <?php
-       require "connection.php";
-       $db = get_db();
-       foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE phone = '$phone'") as $fRow)
-       {
-        $id = $fRow["id"];   
-        $first_name = $fRow["first_name"];
-        $last_name = $fRow["last_name"];
-        $phone = $fRow["phone"];
+   require "connection.php";
+   $db = get_db();
+   foreach ($db->query("SELECT id, first_name, last_name, phone, valid_id FROM customer WHERE id = $customerId") as $fRow)
+   {  
+      $guestId = $fRow["id"];
 
-
-        echo " <input type='hidden' id='customerID' name='customerID' value='$id'>";
-       }
+      echo " <input type='hidden' id='customerID' name='customerID' value='$guestId'>";
+    }
     ?>
 
       <div class="form-group">
