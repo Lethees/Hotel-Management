@@ -1,6 +1,3 @@
-<?php
-$customerId = $_GET['customerId'];
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -41,16 +38,12 @@ $customerId = $_GET['customerId'];
      <h2>A new Reservation for the new registered guest</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="insertNewReservation.php">
-    <?php
-   require "connection.php";
-   $db = get_db();
-   foreach ($db->query("SELECT id, first_name, last_name, phone, valid_id FROM customer WHERE id = $customerId") as $fRow)
-   {  
-      $guestId = $fRow["id"];
 
-      echo " <input type='hidden' id='customerID' name='customerID' value='$guestId'>";
-    }
-    ?>
+    <div class="form-group">
+        <label for="validId">Customer ID:</label>
+        <input type="text" class="form-control" id="customerID" name="customerID" >
+        <div class="valid-feedback">Valid.</div>
+      </div>
 
       <div class="form-group">
         <label for="validId">Room Number:</label>
@@ -58,7 +51,7 @@ $customerId = $_GET['customerId'];
         <div class="valid-feedback">Valid.</div>
       </div>
     
-    <div class="container">
+    <div class="form-group">
         Check-In Date: <input width="276" id="checkInDate" name="checkInDate" />
         Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate"  />
 
@@ -82,10 +75,11 @@ $customerId = $_GET['customerId'];
             }
         });
     </script>
+
         <br>
     <br>
 
-    <button type="submit" class="btn btn-dark">Proceed to Parking Information Page</button>
+    <button type="submit" class="btn btn-dark">Return to menu</button>
     <br>
     <br>
     </form>

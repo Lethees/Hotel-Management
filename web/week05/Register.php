@@ -39,6 +39,7 @@
      <p>If there are two guests staying in the same room, only register the main guest</p>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="insertNewGuest.php">
+    
       <div class="form-group">
         <label for="FirstName">First Name:</label>
         <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name e.g: 'John.'" name="FirstName" >
@@ -67,7 +68,7 @@
         <div class="invalid-feedback">Please fill out this field, e.g "E96770515"</div>
       </div>
     
-    <button type="submit" class="btn btn-dark">Proceed to reservation page</button>
+    <button type="submit" class="btn btn-dark">Return to menu</button>
     <br>
     <br>
     </form>

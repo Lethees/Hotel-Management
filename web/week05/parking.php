@@ -1,6 +1,3 @@
-<?php
-$customerId = $_GET['customerId'];
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -41,32 +38,14 @@ $customerId = $_GET['customerId'];
      <h2>A new Reservation for the new registered guest</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="insertNewParking.php">
-    <input>
-    <?php
-   require "connection.php";
-   $db = get_db();
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $customerId") as $fRow)
-   {  
-      $guestId = $fRow["customer_id"];
 
-      echo " <input type='hidden' id='customerID' name='customerID' value='$guestId'>";
-    }
-    ?>
-    <p>Check "No" if the guest does not have a vehicle</p>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-  <label class="form-check-label" for="exampleRadios1">
-    Yes
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-  <label class="form-check-label" for="exampleRadios2">
-    No
-  </label>
-</div>
       
-    <div id="nd" class="nd">
+      <div class="form-group">
+        <label for="validId">Customer ID:</label>
+        <input type="text" class="form-control" id="customerID" name="customerID" >
+        <div class="valid-feedback">Valid.</div>
+      </div>
+
       <div class="form-group">
         <label for="validId">Make:</label>
         <input type="text" class="form-control" id="Make" name="Make" >
@@ -92,7 +71,7 @@ $customerId = $_GET['customerId'];
         <input type="text" class="form-control" id="LicensePlate" name="LicensePlate" >
         <div class="valid-feedback">Valid.</div>
       </div>
-      </div>
+
 
     <button type="submit" class="btn btn-dark">Return to menu</button>
     <br>

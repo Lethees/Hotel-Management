@@ -19,14 +19,14 @@ try
 	
 	// SELECT c.relname FROM pg_class c WHERE c.relkind = 'S';   -- display all sequences
 	// get id of last inserted row - save in $userId
-	 $userId = $db->lastInsertId("customer_id_seq");
+	// $userId = $db->lastInsertId("customer_id_seq");
 }
 catch (Exception $ex)
 {
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: reservation.php/?customerId=$userId");
+header("Location: management.php");
 
 die(); 
 
