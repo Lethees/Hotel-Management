@@ -61,7 +61,7 @@
      </div>
 
       <div class="form-group">
-        <label for="validId">Phone Number:</label>
+        <label for="validId">Valid ID:</label>
         <input type="text" class="form-control" id="validId" placeholder="Enter valid ID e.g: 'E96770515'" name="validId" >
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field, e.g "E96770515"</div>
