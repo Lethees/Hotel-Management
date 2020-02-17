@@ -1,6 +1,6 @@
 <?php
   $actions = array("Guest List", "Room List", "Search Guest", "New Guest", "Reservation", "New Parking");
-  $image = array("1.png", "2.png", "3.png", "4.png", "5.JPG", "6.png");
+  $image = array("1.png", "2.png", "3.png", "4.png", "5.jpg", "6.png");
   $button = array("dark", "info", "success", "primary", "secondary", "warning");
   $web = array("guestList.php", "roomList.php", "search.php", "Register.php", "reservation.php", "parking.php");
 

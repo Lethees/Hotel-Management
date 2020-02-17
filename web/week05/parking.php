@@ -1,3 +1,6 @@
+<?php
+$customerId = $_GET['customerId'];
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,18 +43,14 @@
     <form method="post" action="insertNewParking.php">
     <input>
     <?php
-       require "connection.php";
-       $db = get_db();
-       foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE phone = '$phone'") as $fRow)
-       {
-        $id = $fRow["id"];   
-        $first_name = $fRow["first_name"];
-        $last_name = $fRow["last_name"];
-        $phone = $fRow["phone"];
+   require "connection.php";
+   $db = get_db();
+   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $customerId") as $fRow)
+   {  
+      $guestId = $fRow["customer_id"];
 
-
-        echo " <input type='hidden' id='customerID' name='customerID' value='$id'>";
-       }
+      echo " <input type='hidden' id='customerID' name='customerID' value='$guestId'>";
+    }
     ?>
     <p>Check "No" if the guest does not have a vehicle</p>
 <div class="form-check">
@@ -95,7 +94,7 @@
       </div>
       </div>
 
-    <button type="submit" class="btn btn-dark">Proceed to Finish Registration</button>
+    <button type="submit" class="btn btn-dark">Return to menu</button>
     <br>
     <br>
     </form>
