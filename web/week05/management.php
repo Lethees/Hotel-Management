@@ -1,8 +1,8 @@
 <?php
-  $actions = array("Guest List", "Room List", "Search Guest");
-  $image = array("1.png", "2.png", "3.png");
-  $button = array("dark", "info", "success");
-  $web = array("guestList.php", "roomList.php", "search.php");
+  $actions = array("Guest List", "Room List", "Search Guest", "Registeration");
+  $image = array("1.png", "2.png", "3.png", "4.png");
+  $button = array("dark", "info", "success", "secondary");
+  $web = array("guestList.php", "roomList.php", "search.php", "Register.php");
 
 ?>
 <!DOCTYPE html>
@@ -94,7 +94,7 @@
       <div class="container">
         <div class="row">          
             <p class="copyright-text justify-content-start">Copyright &copy; 2020 All Rights Reserved by 
-         <a href="#">Pines INN</a>.
+         <a href="#">Pines Inn</a>.
             </p>     
         </div>
       </div>

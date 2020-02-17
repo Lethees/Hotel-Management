@@ -90,7 +90,7 @@
       <div class="container">
         <div class="row">          
             <p class="copyright-text justify-content-start">Copyright &copy; 2020 All Rights Reserved by 
-         <a href="#">Pines INN</a>.
+         <a href="#">Pines Inn</a>.
             </p>     
         </div>
       </div>

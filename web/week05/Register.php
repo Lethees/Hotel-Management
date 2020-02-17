@@ -1,7 +1,3 @@
-<?php
-$guest_id = $_GET['id'];
-
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,6 +8,10 @@ $guest_id = $_GET['id'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>    
     <div class="jumbotron text-center">
@@ -35,43 +35,43 @@ $guest_id = $_GET['id'];
     <br>
 
     <div class="container">
-  <h2>Reservation List</h2> 
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'guestList.php';">Return to the GuestList</button>      
-  <table class="table table-dark table-hover">
-    <thead>
-      <tr>
-        <th>Reservation ID</th>
-        <th>Check-In Date</th>
-        <th>Check-Out Date</th>
-        <th>Room Number</th>
-      </tr>
-    </thead>
-    <tbody>
+     <h2>Register a new guest</h2>
+     <p>If there are two guests staying in the same room, only register the main guest</p>
+     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
+    <form method="post" action="reservation.php">
+      <div class="form-group">
+        <label for="FirstName">First Name:</label>
+        <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name e.g: 'John.'" name="FirstName" >
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field, e.g "John."</div>
+      </div>
 
-    <?php
-   require "connection.php";
-   $db = get_db();
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $guest_id") as $fRow)
-   {
-    $reservation_id = $fRow["id"];   
-    $check_in_date = $fRow["check_in_date"];
-    $check_out_date = $fRow["check_out_date"];
-      $room_number = $fRow["room_number"];
+      <div class="form-group">
+       <label for="LastName">Last Name:</label>
+       <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >
+        <div class="valid-feedback">Valid.</div>
+       <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
+      </div> 
 
-    echo "<tr>";
-    echo "<td>$reservation_id</td>"; 
-    echo "<td>$check_in_date</td>";
-    echo "<td>$check_out_date</td>";
-    echo "<td>$room_number</td>";
-    echo "</tr>";
-    }
+      <div class="form-group">
+       <label for="phone">Phone Number:</label>
+       <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone" >
+       <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
+     </div>
+
+      <div class="form-group">
+        <label for="validId">Phone Number:</label>
+        <input type="text" class="form-control" id="validId" placeholder="Enter valid ID e.g: 'E96770515'" name="validId" >
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field, e.g "E96770515"</div>
+      </div>
     
-
-            ?>
-            </tbody>
-  </table>
-</div>
-
+    <button type="submit" class="btn btn-dark">Proceed to reservation page</button>
+    <br>
+    <br>
+    </form>
+  </div>
 
     
   <!-- Site footer -->
