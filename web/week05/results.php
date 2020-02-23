@@ -53,6 +53,25 @@ $phone = $_POST['phone'];
     <?php
    require "connection.php";
    $db = get_db();
+   if ($last_name != "" && $phone != "" && $last_name != null && $phone != null){
+    foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' AND phone = '$phone'") as $fRow)
+    {
+     $id = $fRow["id"];   
+     $first_name = $fRow["first_name"];
+     $last_name = $fRow["last_name"];
+       $phone = $fRow["phone"];
+ 
+     echo "<tr>";
+     echo "<td>$id</td>"; 
+     echo "<td>$first_name</td>";
+     echo "<td>$last_name</td>";
+     echo "<td>$phone</td>";
+     echo "<td><a href='detail.php?id=$id'>Check Reservation Details</a></td>";
+     echo "<td><a href='parkingInformation.php?id=$id'>Check Parking Info</a></td>";
+     echo "</tr>";
+     }
+   }
+   else{
    foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' OR phone = '$phone'") as $fRow)
    {
     $id = $fRow["id"];   
@@ -69,6 +88,7 @@ $phone = $_POST['phone'];
     echo "<td><a href='parkingInformation.php?id=$id'>Check Parking Info</a></td>";
     echo "</tr>";
     }
+  }
 
             ?>
             </tbody>

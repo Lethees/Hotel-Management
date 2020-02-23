@@ -53,7 +53,7 @@ $first_name = $_POST['FirstName'];
     <?php
    require "connection.php";
    $db = get_db();
-   if ($last_name != "" && $last_name != "" && $phone != ""){
+   if ($first_name != "" && $last_name != "" && $phone != "" && $first_name != null && $last_name != null && $phone != null){
     foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' AND phone = '$phone' AND first_name = '$first_name'") as $fRow)
     {
      $id = $fRow["id"];   
