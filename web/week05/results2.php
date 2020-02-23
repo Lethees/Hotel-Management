@@ -2,8 +2,6 @@
 $last_name = $_POST['LastName'];
 $phone = $_POST['phone'];
 $first_name = $_POST['FirstName'];
-
-echo ($first_name);
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +37,7 @@ echo ($first_name);
 
     <div class="container">
   <h2>Results</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search.php';">Return to the Searching Page</button>       
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search2.php';">Return to the Searching Page</button>       
   <table class="table table-dark table-hover">
     <thead>
       <tr>

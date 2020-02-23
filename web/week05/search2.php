@@ -33,7 +33,7 @@
     <div class="container">
     <h2>Search Guests to Print out Their Receipt</h2> 
     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results.php" class="was-validated">
+    <form method="post" action="results2.php" class="was-validated">
     <div class="form-group">
       <label for="FirstName">First Name:</label>
       <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name e.g: 'John.'" name="FirstName">
