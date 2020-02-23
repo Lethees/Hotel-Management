@@ -45,8 +45,7 @@ $first_name = $_POST['FirstName'];
         <th>First Name</th>
         <th>Last Name</th>
         <th>Phone Number</th>
-        <th>Reservation Detail</th>
-        <th>parking Information</th>
+        <th>Print Receipt</th>
       </tr>
     </thead>
     <tbody>
@@ -66,7 +65,7 @@ $first_name = $_POST['FirstName'];
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
-    echo "<td><a href='Receipt.php?id=$id'>Print receipt</a></td>";
+    echo "<td><a href='Receipt.php?id=$id'>Print Receipt</a></td>";
     echo "</tr>";
     }
 
