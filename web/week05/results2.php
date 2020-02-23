@@ -53,6 +53,24 @@ $first_name = $_POST['FirstName'];
     <?php
    require "connection.php";
    $db = get_db();
+   if ($last_name != "" && $last_name != "" && $phone != ""){
+    foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' AND phone = '$phone' AND first_name = '$first_name'") as $fRow)
+    {
+     $id = $fRow["id"];   
+     $first_name = $fRow["first_name"];
+     $last_name = $fRow["last_name"];
+       $phone = $fRow["phone"];
+ 
+     echo "<tr>";
+     echo "<td>$id</td>"; 
+     echo "<td>$first_name</td>";
+     echo "<td>$last_name</td>";
+     echo "<td>$phone</td>";
+     echo "<td><a href='Receipt.php?id=$id'>Print Receipt</a></td>";
+     echo "</tr>";
+     }
+   }
+   else{
    foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' OR phone = '$phone' OR first_name = '$first_name'") as $fRow)
    {
     $id = $fRow["id"];   
@@ -67,7 +85,9 @@ $first_name = $_POST['FirstName'];
     echo "<td>$phone</td>";
     echo "<td><a href='Receipt.php?id=$id'>Print Receipt</a></td>";
     echo "</tr>";
-    }
+    
+  }
+}  
 
             ?>
             </tbody>
