@@ -1,3 +1,8 @@
+<?php
+$last_name = $_POST['LastName'];
+$phone = $_POST['phone'];
+$first_name = $_POST['FirstName'];
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -31,33 +36,45 @@
     <br>
 
     <div class="container">
-    <h2>Search Guests by Last Name or Phone Number</h2> 
-    <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results2.php" class="was-validated">
-    <div class="form-group">
-      <label for="LastName">Last Name:</label>
-      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone" >
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
-    </div>
-    <div class="form-group form-check ">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Check this checkbox to continue.</div>
-      </label>
-    </div>
-    <button type="submit" class="btn btn-dark">Send Confirmation</button>
-    <br>
-    <br>
-  </div>
-</form>
+  <h2>Results</h2>
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search.php';">Return to the Searching Page</button>       
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>Guest ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Reservation Detail</th>
+        <th>parking Information</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <?php
+   require "connection.php";
+   $db = get_db();
+   foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' OR phone = '$phone' AND first_name = '$first_name' ") as $fRow)
+   {
+    $id = $fRow["id"];   
+    $first_name = $fRow["first_name"];
+    $last_name = $fRow["last_name"];
+      $phone = $fRow["phone"];
+
+    echo "<tr>";
+    echo "<td>$id</td>"; 
+    echo "<td>$first_name</td>";
+    echo "<td>$last_name</td>";
+    echo "<td>$phone</td>";
+    echo "<td><a href='Receipt.php?id=$id'>Print receipt</a></td>";
+    echo "</tr>";
+    }
+
+            ?>
+            </tbody>
+  </table>
+</div>
+
 
     
   <!-- Site footer -->

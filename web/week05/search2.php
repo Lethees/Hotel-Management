@@ -31,18 +31,24 @@
     <br>
 
     <div class="container">
-    <h2>Search Guests by Last Name or Phone Number</h2> 
+    <h2>Search Guests to Print out Their Receipt</h2> 
     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results2.php" class="was-validated">
+    <form method="post" action="results.php" class="was-validated">
+    <div class="form-group">
+      <label for="FirstName">First Name:</label>
+      <input type="text" class="form-control" id="FirstName" placeholder="Enter Last Name e.g: 'Smith.'" name="FirstName">
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field, e.g "John."</div>
+    </div>
     <div class="form-group">
       <label for="LastName">Last Name:</label>
-      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >
+      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
     </div>
     <div class="form-group">
       <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone" >
+      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
     </div>
