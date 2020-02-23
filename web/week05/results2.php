@@ -54,7 +54,7 @@ $first_name = $_POST['FirstName'];
     <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' OR phone = '$phone' AND first_name = '$first_name' ") as $fRow)
+   foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer WHERE last_name = '$last_name' OR phone = '$phone' OR first_name = '$first_name' ") as $fRow)
    {
     $id = $fRow["id"];   
     $first_name = $fRow["first_name"];

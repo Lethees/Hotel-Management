@@ -36,7 +36,7 @@
     <form method="post" action="results.php" class="was-validated">
     <div class="form-group">
       <label for="FirstName">First Name:</label>
-      <input type="text" class="form-control" id="FirstName" placeholder="Enter Last Name e.g: 'Smith.'" name="FirstName">
+      <input type="text" class="form-control" id="FirstName" placeholder="Enter Last Name e.g: 'John.'" name="FirstName">
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "John."</div>
     </div>
