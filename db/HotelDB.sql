@@ -67,7 +67,7 @@ INSERT INTO    customer ( first_name
                         , last_name
                         , phone
                         , valid_id) 
-                 VALUES ( 'Audery'
+                 VALUES ( 'Audrey'
                         , 'Henderson'
                         , '202-595-4442'
                         , 'WSD11JJWA');
