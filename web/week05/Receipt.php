@@ -36,12 +36,10 @@ $guest_id = $_GET['id'];
  
  
     <div class="container">
-  <h2>Guest List</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>  
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'results2.php';">Return to the list</button>  
   <div class="card">
 <div class="card-header">
 Invoice
-<strong>01/01/01/2018</strong> 
   <span class="float-right"> <strong>Status:</strong> Pending</span>
 
 </div>
