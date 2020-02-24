@@ -88,14 +88,14 @@ Invoice
                 <th>Room Type</th>
 
                 <th class="right">Unit Cost</th>
-                <th class="center">Nights</th>
+               <th class="center">Nights</th>
                 <th class="right">Total</th>
             </tr>
         </thead>
     <tbody>
     
     <?php
-   require "connection.php";
+  /* require "connection.php";
    $db = get_db();
    foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number, FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
@@ -104,9 +104,6 @@ Invoice
     $check_out_date = $fRow["check_out_date"];
       $room_number = $fRow["room_number"];
       $interval = date_diff($check_in_date, $check_out_date); 
-  
-// printing result in days format 
-echo $interval->format('%R%a nights'); 
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
@@ -123,14 +120,14 @@ echo $interval->format('%R%a nights');
             }
          }
     $total = $price * $interval;*/
-    echo "<tr>";
-    echo "<td class='center'>$reservation_id</td>";
-    echo "<td class='left strong'>$room_type</td>";
-    echo "<td class='right'>$price</td>";
-    echo "<td class='center'>$interval->format('%R%a Nights')</td>";
-    echo "<td class='right'>$total</td>";
-    echo "</tr>";
-    }
+    //echo "<tr>";
+  //  echo "<td class='center'>$reservation_id</td>";
+ //   echo "<td class='left strong'>$room_type</td>";
+  //  echo "<td class='right'>$price</td>";
+  //  echo "<td class='center'>$interval->format('%R%a Nights')</td>";
+  //  echo "<td class='right'>$total</td>";
+ //   echo "</tr>";
+  //  }
     
 
             ?>
