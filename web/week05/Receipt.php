@@ -60,7 +60,7 @@ Invoice
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
 <?php
-   foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT * FROM customer WHERE id = $guest_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
@@ -92,7 +92,7 @@ Invoice
     <tbody>
     
     <?php
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number, FROM reservation WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT * FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
     $check_in_date = $fRow["check_in_date"];
