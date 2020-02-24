@@ -31,7 +31,7 @@
     <br>
 
     <div class="container">
-    <h2>Search Guests to Print out Their Receipt</h2>
+    <h2>Search Guests to Print out Their Receipts</h2>
     <p>If all the input below are filled, the search engine will only obtain the records that match all the inputs</p> 
     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="results2.php" class="was-validated">
