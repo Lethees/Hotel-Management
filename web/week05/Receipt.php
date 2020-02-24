@@ -132,7 +132,7 @@ Invoice
   echo "<td class='left'>$check_in_date</td>";
   echo "<td class='left'>$check_out_date</td>";
    echo "<td class='right'>$price</td>";
-    echo "<td class='center'>$days Nights</td>";
+    echo "<td class='center'>$days</td>";
    echo "<td class='right'>$total</td>";
    echo "</tr>";
   }
@@ -147,7 +147,7 @@ echo "<tr>";
 echo "<td class='left'>";
 echo "<strong>Subtotal</strong>";
 echo "</td>";
-echo "<td class='right'>$ <?php $total ?></td>";
+echo "<td class='right'>$ $total</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td class='left'>";
@@ -162,7 +162,7 @@ echo "</tr>
 <strong>Total</strong>
 </td>
 <td class='right'>
-<strong><$newTotal</strong>";
+<strong>$newTotal</strong>";
 ?>
 </td>
 </tr>
