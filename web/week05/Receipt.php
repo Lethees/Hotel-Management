@@ -56,7 +56,7 @@ Invoice
     <div>Annandale, VA</div>
     <div>Email: PineInn@gamil.com</div>
     <div>Phone: +1(202)594-5456</div>
-</div>
+    </div>
 
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
@@ -113,7 +113,7 @@ echo $interval->format('%R%a nights');
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
-        while ($fRow = $room->fetch(PDO::FETCH_ASSOC))
+ /*       while ($fRow = $room->fetch(PDO::FETCH_ASSOC))
         {
              $number = $fRow["number"];
              $roomType = $db->prepare("SELECT * FROM roomType WHERE number = $number");
@@ -125,13 +125,13 @@ echo $interval->format('%R%a nights');
              $description = $rRow["description"];
             }
          }
-    $total = $price * $interval;
+    $total = $price * $interval;*/
     echo "<tr>";
     echo "<td class='center'>$reservation_id</td>";
-    echo "<td class='left strong'>$room_type</td>";
-    echo "<td class='right'>$price</td>";
-    echo "<td class='center'>$interval->format('%R%a Nights')</td>";
-    echo "<td class='right'>$total</td>";
+   // echo "<td class='left strong'>$room_type</td>";
+   // echo "<td class='right'>$price</td>";
+   // echo "<td class='center'>$interval->format('%R%a Nights')</td>";
+  //  echo "<td class='right'>$total</td>";
     echo "</tr>";
     }
     
@@ -143,6 +143,7 @@ echo $interval->format('%R%a nights');
 </div>
 
 
+</div>
 </div>
 </div>
 </div>
