@@ -101,7 +101,7 @@ Invoice
       $interval = date_diff($check_in_date, $check_out_date); 
       echo ($reservation_id);
 
-  /* $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
+   $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
         while ($fRow = $room->fetch(PDO::FETCH_ASSOC))
         {
@@ -115,13 +115,13 @@ Invoice
              $description = $rRow["description"];
             }
          }
-    $total = $price * $interval;*/
+    $total = $price * $interval;
     echo "<tr>";
    echo "<td class='center'>$reservation_id</td>";
- // echo "<td class='left strong'>$room_type</td>";
-  // echo "<td class='right'>$price</td>";
-    echo "<td class='center'>$interval->format('%R%a Nights')</td>";
-  // echo "<td class='right'>$total</td>";
+  echo "<td class='left strong'>$room_type</td>";
+   echo "<td class='right'>$price</td>";
+    echo "<td class='center'>$interval Nights</td>";
+   echo "<td class='right'>$total</td>";
    echo "</tr>";
   }
     
