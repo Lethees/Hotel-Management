@@ -39,7 +39,7 @@ $db = get_db();
  
     <div class="container">
     <h2>Reciept Page</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'results2.php';">Return to the list</button>  
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search2.php';">Return to the Search Page</button>  
   <div class="card">
 <div class="card-header">
 Invoice
