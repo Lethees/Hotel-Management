@@ -1,6 +1,7 @@
 <?php
 $guest_id = $_GET['id'];
-
+require "connection.php";
+$db = get_db();
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,8 +60,6 @@ Invoice
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
 <?php
-  /* require "connection.php";
-   $db = get_db();
    foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE id = $guest_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
@@ -71,7 +70,7 @@ Invoice
     echo "<strong>$first_name $last_name</strong>";
     echo "</div>";
     echo "<div>Phone: $phone</div>";
-    }*/
+    }
     
 
             ?>
@@ -93,8 +92,6 @@ Invoice
     <tbody>
     
     <?php
-   require "connection.php";
-   $db = get_db();
    foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number, FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
