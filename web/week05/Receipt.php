@@ -37,6 +37,7 @@ $db = get_db();
  
  
     <div class="container">
+    <h2>Reciept Page</h2>
   <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'results2.php';">Return to the list</button>  
   <div class="card">
 <div class="card-header">
@@ -83,6 +84,8 @@ Invoice
             <tr>
                 <th class="center">#</th>
                 <th>Room Type</th>
+                <th>Check-In Date</th>
+                <th>Check-Out Date</th>
 
                 <th class="right">Unit Cost</th>
                <th class="center">Nights</th>
@@ -98,15 +101,6 @@ Invoice
     $check_in_date = $fRow["check_in_date"];
     $check_out_date = $fRow["check_out_date"];
       $room_number = $fRow["room_number"];
-
-      $diff = abs(strtotime($check_in_date) - strtotime($check_out_date));
-
-//$years = floor($diff / (365*60*60*24));
-//$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
-$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
-printf("%d years, %d months, %d days\n", $years, $months, $days);
-
-
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
@@ -135,6 +129,8 @@ printf("%d years, %d months, %d days\n", $years, $months, $days);
     echo "<tr>";
    echo "<td class='center'>$reservation_id</td>";
   echo "<td class='left strong'>$room_type</td>";
+  echo "<td class='left'>$check_in_date</td>";
+  echo "<td class='left'>$check_out_date</td>";
    echo "<td class='right'>$price</td>";
     echo "<td class='center'>$days Nights</td>";
    echo "<td class='right'>$total</td>";
