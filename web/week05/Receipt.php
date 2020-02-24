@@ -92,7 +92,7 @@ Invoice
     <tbody>
     
     <?php
-   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT * FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
     $check_in_date = $fRow["check_in_date"];
@@ -101,17 +101,12 @@ Invoice
 
       $diff = abs(strtotime($check_in_date) - strtotime($check_out_date));
 
-$years = floor($diff / (365*60*60*24));
-$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+//$years = floor($diff / (365*60*60*24));
+//$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
 $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
 printf("%d years, %d months, %d days\n", $years, $months, $days);
 
-      $interval = date_diff($check_in_date, $check_out_date); 
-  
-// printing result in days format 
-      echo $interval->format('%R%a days'); 
-      echo ($interval);
-      echo ($check_in_date);
+
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
@@ -127,12 +122,21 @@ printf("%d years, %d months, %d days\n", $years, $months, $days);
              $description = $rRow["description"];
             }
          }
-    $total = $price * $interval;
+
+    
+         $diff = abs(strtotime($check_in_date) - strtotime($check_out_date));
+
+         $years = floor($diff / (365*60*60*24));
+         $months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+         $days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24));
+
+
+    $total = $price * $days;
     echo "<tr>";
    echo "<td class='center'>$reservation_id</td>";
   echo "<td class='left strong'>$room_type</td>";
    echo "<td class='right'>$price</td>";
-    echo "<td class='center'>$interval Nights</td>";
+    echo "<td class='center'>$days Nights</td>";
    echo "<td class='right'>$total</td>";
    echo "</tr>";
   }
