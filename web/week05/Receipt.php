@@ -153,14 +153,16 @@ echo "<tr>";
 echo "<td class='left'>";
 echo "<strong>Sales Tax(6%)</strong>";
 echo "</td>";
-echo "<td class='right'>$ $tax = $total * (0.06)</td>";
+$tax = $total * (0.06);
+echo "<td class='right'>$ $tax</td>";
+$newTotal = $tax + $total;
 echo "</tr>
 <tr>
 <td class='left'>
 <strong>Total</strong>
 </td>
 <td class='right'>
-<strong><$total + $tax</strong>";
+<strong><$newTotal</strong>";
 ?>
 </td>
 </tr>
