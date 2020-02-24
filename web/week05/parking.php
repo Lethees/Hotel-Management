@@ -35,7 +35,7 @@
     <br>
 
     <div class="container">
-     <h2>Enter new vehicle information</h2>
+     <h2>Enter New Vehicle Information</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="insertNewParking.php">
 
