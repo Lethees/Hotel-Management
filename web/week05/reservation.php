@@ -76,8 +76,6 @@
         });
     </script>
 
-        <br>
-
     <button type="submit" class="btn btn-dark">Register</button>
     <br>
     <br>
