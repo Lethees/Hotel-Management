@@ -63,7 +63,7 @@ Invoice
 <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT * FROM customer WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE customer_id = $guest_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
@@ -110,7 +110,7 @@ echo $interval->format('%R%a nights');
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
- /*       while ($fRow = $room->fetch(PDO::FETCH_ASSOC))
+        while ($fRow = $room->fetch(PDO::FETCH_ASSOC))
         {
              $number = $fRow["number"];
              $roomType = $db->prepare("SELECT * FROM roomType WHERE number = $number");
@@ -125,10 +125,10 @@ echo $interval->format('%R%a nights');
     $total = $price * $interval;*/
     echo "<tr>";
     echo "<td class='center'>$reservation_id</td>";
-   // echo "<td class='left strong'>$room_type</td>";
-   // echo "<td class='right'>$price</td>";
-   // echo "<td class='center'>$interval->format('%R%a Nights')</td>";
-  //  echo "<td class='right'>$total</td>";
+    echo "<td class='left strong'>$room_type</td>";
+    echo "<td class='right'>$price</td>";
+    echo "<td class='center'>$interval->format('%R%a Nights')</td>";
+    echo "<td class='right'>$total</td>";
     echo "</tr>";
     }
     
