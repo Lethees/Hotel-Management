@@ -59,7 +59,7 @@ Invoice
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
 <?php
-   require "connection.php";
+  /* require "connection.php";
    $db = get_db();
    foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE id = $guest_id") as $fRow)
    {
@@ -71,7 +71,7 @@ Invoice
     echo "<strong>$first_name $last_name</strong>";
     echo "</div>";
     echo "<div>Phone: $phone</div>";
-    }
+    }*/
     
 
             ?>
