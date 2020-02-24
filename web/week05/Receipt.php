@@ -104,6 +104,7 @@ Invoice
     $check_out_date = $fRow["check_out_date"];
       $room_number = $fRow["room_number"];
       $interval = date_diff($check_in_date, $check_out_date); 
+      echo ($reservation_id);
 
   /* $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
@@ -124,7 +125,7 @@ Invoice
    echo "<td class='center'>$reservation_id</td>";
  // echo "<td class='left strong'>$room_type</td>";
   // echo "<td class='right'>$price</td>";
-  //  echo "<td class='center'>$interval->format('%R%a Nights')</td>";
+    echo "<td class='center'>$interval->format('%R%a Nights')</td>";
   // echo "<td class='right'>$total</td>";
    echo "</tr>";
   }
