@@ -68,7 +68,7 @@
         <div class="invalid-feedback">Please fill out this field, e.g "E96770515"</div>
       </div>
     
-    <button type="submit" class="btn btn-dark">Submit and Return to menu</button>
+    <button type="submit" class="btn btn-dark">Register</button>
     <br>
     <br>
     </form>
