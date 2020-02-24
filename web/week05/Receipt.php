@@ -182,6 +182,7 @@ echo "</tr>
 <div class="print">
              <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
 	    </div>
+        <br>
 </div>
 
     
