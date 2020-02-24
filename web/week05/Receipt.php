@@ -136,9 +136,35 @@ Invoice
    echo "<td class='right'>$total</td>";
    echo "</tr>";
   }
-    
-
             ?>
+
+</tbody>
+</table>
+            <div class="col-lg-4 col-sm-5 ml-auto">
+<table class="table table-clear">
+<tbody>
+<tr>
+<td class="left">
+<strong>Subtotal</strong>
+</td>
+<td class="right">$ <?php $total ?></td>
+</tr>
+<tr>
+<td class="left">
+<strong>Sales Tax(6%)</strong>
+</td>
+<td class="right">$ <?php $tax = $total * (0.06) ?></td>
+</tr>
+<tr>
+<td class="left">
+<strong>Total</strong>
+</td>
+<td class="right">
+<strong><?php $total + $tax?></strong>
+</td>
+</tr>
+
+
 </tbody>
 </table>
 
