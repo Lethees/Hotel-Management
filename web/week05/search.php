@@ -34,7 +34,7 @@
     <h2>Search Guests by Last Name or Phone Number</h2>
     <p>If all the input below are filled, the search engine will only obtain the records that match all the inputs</p> 
     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results2.php" class="was-validated">
+    <form method="post" action="results.php" class="was-validated">
     <div class="form-group">
       <label for="LastName">Last Name:</label>
       <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName" >
