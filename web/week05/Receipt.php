@@ -55,7 +55,7 @@ Invoice
     </div>
     <div>9013 Orange Hunt Lane</div>
     <div>Annandale, VA</div>
-    <div>Email: PineInn@gamil.com</div>
+    <div>Email: PinesInn@gamil.com</div>
     <div>Phone: +1(202)594-5456</div>
     </div>
 
@@ -177,9 +177,6 @@ echo "</tr>
 
 </div>
 </div>
-<div class="print">
-             <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
-	    </div>
 </div>
 <br>
 <div class="print">
