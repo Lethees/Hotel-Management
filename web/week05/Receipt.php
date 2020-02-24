@@ -147,14 +147,14 @@ echo "<tr>";
 echo "<td class='left'>";
 echo "<strong>Subtotal</strong>";
 echo "</td>";
-echo "<td class='right'>$ $total</td>";
+echo "<td class='right'>$$total</td>";
 echo "</tr>";
 echo "<tr>";
 echo "<td class='left'>";
-echo "<strong>Sales Tax(6%)</strong>";
+echo "<strong>Sales Tax (6%)</strong>";
 echo "</td>";
 $tax = $total * (0.06);
-echo "<td class='right'>$ $tax</td>";
+echo "<td class='right'>$$tax</td>";
 $newTotal = $tax + $total;
 echo "</tr>
 <tr>
@@ -162,7 +162,7 @@ echo "</tr>
 <strong>Total</strong>
 </td>
 <td class='right'>
-<strong>$newTotal</strong>";
+<strong>$$newTotal</strong>";
 ?>
 </td>
 </tr>
