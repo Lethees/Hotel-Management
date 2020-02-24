@@ -68,9 +68,6 @@ Invoice
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
     $phone = $fRow["phone"];
-      $year = $fRow["year"];
-      $license_plate = $fRow["license_plate"];
-      $customer_id = $fRow["customer_id"];
 
     echo "<div>";
     echo "<strong>$first_name $last_name</strong>";
