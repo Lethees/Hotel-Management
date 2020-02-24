@@ -63,7 +63,7 @@ Invoice
 <?php
    require "connection.php";
    $db = get_db();
-   foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT first_name, last_name, phone FROM customer WHERE id = $guest_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
