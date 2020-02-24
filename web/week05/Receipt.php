@@ -92,14 +92,14 @@ Invoice
     <tbody>
     
     <?php
-   foreach ($db->query("SELECT * FROM reservation WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number, DATEDIFF(day, check_in_date, check_out_date) FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
     $check_in_date = $fRow["check_in_date"];
     $check_out_date = $fRow["check_out_date"];
       $room_number = $fRow["room_number"];
-      $interval = date_diff($check_in_date, $check_out_date); 
-      echo ($reservation_id);
+      $interval = $fRow["DATEDIFF"];
+      echo ($interval);
 
    $room = $db->prepare("SELECT * FROM room WHERE number = $room_number");
    $room->execute();
