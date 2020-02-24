@@ -132,9 +132,9 @@ Invoice
   echo "<td class='left strong'>$room_type</td>";
   echo "<td class='left'>$check_in_date</td>";
   echo "<td class='left'>$check_out_date</td>";
-   echo "<td class='right'>$price</td>";
+   echo "<td class='right'>$$price</td>";
     echo "<td class='center'>$days</td>";
-   echo "<td class='right'>$total</td>";
+   echo "<td class='right'>$$total</td>";
    echo "</tr>";
   }
 
@@ -177,6 +177,9 @@ echo "</tr>
 
 </div>
 </div>
+<div class="print">
+             <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+	    </div>
 </div>
 <br>
 <div class="print">
