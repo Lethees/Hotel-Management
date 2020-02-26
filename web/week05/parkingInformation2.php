@@ -1,3 +1,7 @@
+<?php
+$guest_id = $_GET['id'];
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,19 +33,19 @@
         </form>
     </nav>
     <br>
- 
+
     <div class="container">
-  <h2>Guest List</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>       
+  <h2>Parking Information</h2> 
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'guestList.php';">Return to the GuestList</button>      
   <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>Guest ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>Reservation Detail</th>
-        <th>Parking Information</th>
+        <th>Permit ID</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>License Plate Num</th>
+        <th>Customer ID</th>
       </tr>
     </thead>
     <tbody>
@@ -49,22 +53,21 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $customers = $db->prepare("SELECT * FROM customer");
-   $customers->execute();
-   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
+   foreach ($db->query("SELECT * FROM parking WHERE customer_id = $guest_id") as $fRow)
    {
-    $id = $fRow["id"];
-    $first_name = $fRow["first_name"];
-      $last_name = $fRow["last_name"];
-      $phone = $fRow["phone"];
-
+    $PermitId = $fRow["id"];   
+    $make = $fRow["make"];
+    $model = $fRow["model"];
+      $year = $fRow["year"];
+      $license_plate = $fRow["license_plate"];
+      $customer_id = $fRow["customer_id"];
     echo "<tr>";
-    echo "<td>$id</td>";
-    echo "<td>$first_name</td>";
-    echo "<td>$last_name</td>";
-    echo "<td>$phone</td>";
-    echo "<td><a href='detail2.php?id=$id'>Check Reservation Details</a></td>";
-    echo "<td><a href='parkingInformation2.php?id=$id'>Check Parking Info</a></td>";
+    echo "<td>$PermitId</td>"; 
+    echo "<td>$make</td>";
+    echo "<td>$model</td>";
+    echo "<td>$year</td>";
+    echo "<td>$license_plate</td>";
+    echo "<td>$customer_id</td>";
     echo "</tr>";
     }
     
@@ -73,6 +76,7 @@
             </tbody>
   </table>
 </div>
+
 
     
   <!-- Site footer -->

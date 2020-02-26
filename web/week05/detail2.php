@@ -1,3 +1,7 @@
+<?php
+$guest_id = $_GET['id'];
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,19 +33,17 @@
         </form>
     </nav>
     <br>
- 
+
     <div class="container">
-  <h2>Guest List</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>       
+  <h2>Reservation List</h2> 
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'guestList.php';">Return to the List</button>      
   <table class="table table-dark table-hover">
     <thead>
       <tr>
-        <th>Guest ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>Reservation Detail</th>
-        <th>Parking Information</th>
+        <th>Reservation ID</th>
+        <th>Check-In Date</th>
+        <th>Check-Out Date</th>
+        <th>Room Number</th>
       </tr>
     </thead>
     <tbody>
@@ -49,22 +51,18 @@
     <?php
    require "connection.php";
    $db = get_db();
-   $customers = $db->prepare("SELECT * FROM customer");
-   $customers->execute();
-   while ($fRow = $customers->fetch(PDO::FETCH_ASSOC))
+   foreach ($db->query("SELECT id, check_in_date, check_out_date, customer_id, room_number FROM reservation WHERE customer_id = $guest_id") as $fRow)
    {
-    $id = $fRow["id"];
-    $first_name = $fRow["first_name"];
-      $last_name = $fRow["last_name"];
-      $phone = $fRow["phone"];
+    $reservation_id = $fRow["id"];   
+    $check_in_date = $fRow["check_in_date"];
+    $check_out_date = $fRow["check_out_date"];
+      $room_number = $fRow["room_number"];
 
     echo "<tr>";
-    echo "<td>$id</td>";
-    echo "<td>$first_name</td>";
-    echo "<td>$last_name</td>";
-    echo "<td>$phone</td>";
-    echo "<td><a href='detail2.php?id=$id'>Check Reservation Details</a></td>";
-    echo "<td><a href='parkingInformation2.php?id=$id'>Check Parking Info</a></td>";
+    echo "<td>$reservation_id</td>"; 
+    echo "<td>$check_in_date</td>";
+    echo "<td>$check_out_date</td>";
+    echo "<td>$room_number</td>";
     echo "</tr>";
     }
     
@@ -73,6 +71,7 @@
             </tbody>
   </table>
 </div>
+
 
     
   <!-- Site footer -->
