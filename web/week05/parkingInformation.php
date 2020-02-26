@@ -36,7 +36,7 @@ $guest_id = $_GET['id'];
 
     <div class="container">
   <h2>Parking Information</h2> 
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'result2.php';">Return to the List</button>      
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'result.php';">Return to the List</button>      
   <table class="table table-dark table-hover">
     <thead>
       <tr>
