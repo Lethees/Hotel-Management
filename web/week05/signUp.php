@@ -37,12 +37,14 @@
 		<div class="valid-feedback">Valid.</div>
     	<div class="invalid-feedback">Username can't be blank!</div>
 	</div>
+	<br>
 	<div class="form-group form-check">
 		<input type="password" id="txtPassword" class="form-control form-check-input" name="txtPassword" placeholder="Password" required>
 		<label class="form-check-label" for="txtPassword">Password</label>
 		<div class="valid-feedback">Valid.</div>
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
+	<br>
 	<div class="form-group form-check ">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
