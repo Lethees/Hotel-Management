@@ -106,10 +106,10 @@ if ($badLogin)
 	</div>
 	<br>
 	<div class="form-group">
+	<button type="submit" class="btn btn-primary">Sign In</button>
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
-	<button type="submit" class="btn btn-primary">Sign In</button>
 	<div>
 </form>
 
