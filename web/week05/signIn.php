@@ -95,15 +95,18 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 						</div>
 						<input type="password" class="form-control" name="txtPassword" placeholder="password">
 					</div>
-					<div class="row align-items-center remember" style="float: right;">
-						<input type="checkbox">Remember Me
-					</div>
 					<?php
 if ($badLogin)
 {
 	echo "Incorrect username or password!<br /><br />\n";
 }
 ?>
+					<div class="row align-items-center remember" style="float: right;">
+						<input type="checkbox">Remember Me
+					</div>
+
+					<br>
+	
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn">
 					</div>
