@@ -64,9 +64,9 @@ Invoice
 <?php
    foreach ($db->query("SELECT * FROM customer c INNER JOIN reservation r ON c.id = r.customer id WHERE r.id = $reservation_id") as $fRow)
    {
-    $first_name = $fRow["first_name"];   
-    $last_name = $fRow["last_name"];
-    $phone = $fRow["phone"];
+    $first_name = $fRow["c.first_name"];   
+    $last_name = $fRow["c.last_name"];
+    $phone = $fRow["c.phone"];
     
 
     echo "<div>";
