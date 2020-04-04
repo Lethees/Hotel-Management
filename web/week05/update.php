@@ -9,7 +9,7 @@ $db = get_db();
 
 try
 {
-	$statement = $db->prepare("UPDATE reservation SET room_number = $RoomNumber, check_in_date = $checkInDate, check_out_date = $checkOutDate WHERE id= $id");
+	$statement = $db->prepare("UPDATE reservation SET room_number = $RoomNumber, check_in_date = $checkInDate, check_out_date = $checkOutDate, WHERE id= $id");
 	$statement->execute();
 	
 	// SELECT c.relname FROM pg_class c WHERE c.relkind = 'S';   -- display all sequences
