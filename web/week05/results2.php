@@ -69,6 +69,8 @@ $first_name = $_POST['FirstName'];
        $checkIn = $fROW["r.check_in_date"];
        $checkOut = $fROW["r.check_out_date"];
        $roomNumber = $fROW["r.room_number"];
+
+       echo "console.log($id) console.log($first_name) console.log($checkIn)";
  
      echo "<tr>"; 
      echo "<td>$first_name</td>";
@@ -86,7 +88,7 @@ $first_name = $_POST['FirstName'];
    foreach ($db->query("SELECT c.id, c.first_name, c.last_name, c.phone, r.id, r.check_in_date, r.check_out_date, r.room_number FROM customer c 
    INNER JOIN reservation r ON c.id = r.customer_id WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
    {
-    $id = $fRow["c.id"];   
+    $id = $fRow["c.id"];  
     $first_name = $fRow["c.first_name"];
     $last_name = $fRow["c.last_name"];
       $phone = $fRow["c.phone"];
@@ -95,6 +97,8 @@ $first_name = $_POST['FirstName'];
       $checkIn = $fROW["r.check_in_date"];
       $checkOut = $fROW["r.check_out_date"];
       $roomNumber = $fROW["r.room_number"];
+
+      echo "console.log($id) console.log($first_name) console.log($checkIn)";
 
     echo "<tr>"; 
     echo "<td>$first_name</td>";
