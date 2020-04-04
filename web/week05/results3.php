@@ -1,8 +1,12 @@
+<?php
+$last_name = $_POST['LastName'];
+$phone = $_POST['phone'];
+$first_name = $_POST['FirstName'];
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pines Inn</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="week05.css">
@@ -32,40 +36,77 @@
     <br>
 
     <div class="container">
-    <h2>Search Guests to Print out Their Receipts</h2>
-    <p>If all the inputs below are filled, the search engine will only obtain the records that match all the inputs</p> 
-    <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results2.php" class="was-validated">
-    <div class="form-group">
-      <label for="FirstName">First Name:</label>
-      <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name e.g: 'John.'" name="FirstName">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "John."</div>
-    </div>
-    <div class="form-group">
-      <label for="LastName">Last Name:</label>
-      <input type="text" class="form-control" id="LastName" placeholder="Enter Last Name e.g: 'Smith.'" name="LastName">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "Smith."</div>
-    </div>
-    <div class="form-group">
-      <label for="phone">Phone Number:</label>
-      <input type="text" class="form-control" id="phone" placeholder="Enter 10 digits Phone Number e.g: '202-595-4442'" name="phone">
-      <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
-    </div>
-    <div class="form-group form-check ">
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
-        <div class="valid-feedback">Valid.</div>
-        <div class="invalid-feedback">Check this checkbox to continue.</div>
-      </label>
-    </div>
-    <button type="submit" class="btn btn-dark">Send Confirmation</button>
-    <br>
-    <br>
-  </div>
-</form>
+  <h2>Results</h2>
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search2.php';">Return to the Searching Page</button>       
+  <table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Room#</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <?php
+   require "connection.php";
+   $db = get_db();
+   if ($first_name != "" && $last_name != "" && $phone != "" && $first_name != null && $last_name != null && $phone != null){
+    foreach ($db->query("SELECT r.id as rid, r.check_in_date as check_in_date, r.check_out_date as check_out_date, r.room_number as room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE c.last_name = '$last_name' AND c.phone = '$phone' AND c.first_name = '$first_name'") as $fRow)
+    {   
+      $rId = $fRow["rid"];
+      $checkIn = $fRow["check_in_date"];
+       $checkOut = $fRow["check_out_date"];
+       $roomNumber = $fRow["room_number"];
+ 
+     echo "<tr>";
+     echo "<td>$first_name</td>";
+     echo "<td>$last_name</td>";
+     echo "<td>$phone</td>";
+     echo "<td>$checkIn</td>";
+     echo "<td>$checkOut</td>";
+     echo "<td>$roomNumber</td>";
+     echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
+     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
+     echo "</tr>";
+     }
+   }
+   else{
+   foreach ($db->query("SELECT c.id as cid, c.first_name as first_name , c.last_name as last_name, c.phone as phone, r.check_in_date as check_in_date, r.id as rid, r.check_out_date as check_out_date, r.room_number as room_number FROM customer c INNER JOIN reservation r ON c.id = r.customer_id WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
+   { 
+    $first_name = $fRow["first_name"];
+    $last_name = $fRow["last_name"];
+      $phone = $fRow["phone"];
+
+      $rId = $fRow["rid"];
+      $checkIn = $fRow["check_in_date"];
+      $checkOut = $fRow["check_out_date"];
+      $roomNumber = $fRow["room_number"];
+
+    echo "<tr>"; 
+    echo "<td>$first_name</td>";
+    echo "<td>$last_name</td>";
+    echo "<td>$phone</td>";
+    echo "<td>$checkIn</td>";
+    echo "<td>$checkOut</td>";
+    echo "<td>$roomNumber</td>";
+    echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
+    echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
+    echo "</tr>";
+    
+  }
+}  
+
+            ?>
+            </tbody>
+  </table>
+</div>
+
 
     
   <!-- Site footer -->

@@ -32,10 +32,10 @@
     <br>
 
     <div class="container">
-    <h2>Search Guests to Print out Their Receipts</h2>
+    <h2>Search to Delete & Update Reservations</h2>
     <p>If all the inputs below are filled, the search engine will only obtain the records that match all the inputs</p> 
     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
-    <form method="post" action="results2.php" class="was-validated">
+    <form method="post" action="results3.php" class="was-validated">
     <div class="form-group">
       <label for="FirstName">First Name:</label>
       <input type="text" class="form-control" id="FirstName" placeholder="Enter First Name e.g: 'John.'" name="FirstName">
