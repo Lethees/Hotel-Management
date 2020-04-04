@@ -92,7 +92,7 @@ $db = get_db();
         });
     </script>
 
-    <button type="submit" class="btn btn-Primary">Update</button>
+    <button type="submit" class="btn btn-primary">Update</button>
     <br>
     <br>
     </form>
