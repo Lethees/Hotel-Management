@@ -54,16 +54,15 @@ $db = get_db();
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="update.php">
 
-    <?php echo "$reservation_id + $room_number + $check_in_date" ?>
     <div class="form-group">
         <label for="reservationID">Customer ID:</label>
-        <input type="text" class="form-control" id="reservationID" name="reservationID" value=<?$reservation_id?> disabled >
+        <input type="text" class="form-control" id="reservationID" name="reservationID" disabled><?$reservation_id?>
         <div class="valid-feedback">Valid.</div>
       </div>
 
       <div class="form-group">
         <label for="RoomNumber">Room Number: </label>
-        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" value="<?$room_number?>" >
+        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber"><?$room_number?>
         <div class="valid-feedback">Valid.</div>
       </div>
     
