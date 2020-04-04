@@ -40,8 +40,6 @@ $db = get_db();
     </nav>
     <br>
     <?php
-       require "connection.php";
-       $db = get_db();
        foreach ($db->query("SELECT r.id as rid, r.check_in_date as check_in_date, r.check_out_date as check_out_date, r.room_number as room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE r.id = $reservation_id") as $fRow)
        {
         $reservation_id = $fRow["rid"];   
