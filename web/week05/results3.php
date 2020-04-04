@@ -99,19 +99,12 @@ $first_name = $_POST['FirstName'];
     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
     echo "</tr>"; 
   }
+}
+myfunction($reservation_id){
+    $delete = $db->prepare("DELETE FROM reservation WHERE id = $reservation_id");
+    $delete->execute();
 }  
 
-            ?>
-            <?php
-                myfunction($reservation_id){
-                    try{
-                        $delete = $db->prepare("DELETE FROM reservation WHERE id = $reservation_id");
-                        $delete->execute();
-                    }
-                    catch (Exception $ex){
-                        echo "Error with DB. Details: $ex"; 
-                    } 
-                }
             ?>
             </tbody>
   </table>
