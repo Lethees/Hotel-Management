@@ -63,14 +63,8 @@ CREATE TABLE login
 INSERT INTO admin (  username
                   ,  password)
           VALUES  (
-                     'Admin_123'
-                   , 'HotelAdmin');
-
-INSERT INTO admin (  username
-                  ,  password)
-          VALUES  (
-                     'test'
-                   , '12345678');       
+                     'Lethe'
+                   , 'Lifangyi114');   
 
 INSERT INTO    customer ( first_name
                         , last_name
