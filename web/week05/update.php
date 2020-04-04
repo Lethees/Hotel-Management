@@ -4,7 +4,7 @@ $RoomNumber = $_POST['RoomNumber'];
 $checkInDate = $_POST['checkInDate'];
 $checkOutDate = $_POST['checkOutDate'];
 
-require("connection.php");
+require "connection.php";
 $db = get_db();
 
 try
