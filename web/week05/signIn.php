@@ -91,15 +91,15 @@ if ($badLogin)
 <h1>Please sign in below:</h1>
 
 <form id="mainForm" action="signIn.php" method="POST" class="was-validated">
-	<div class="form-group">
-		<input type="text" id="txtUser" class="form-control form-check-input" name="txtUser" placeholder="Username" required>
+	<div class="form-group form-check">
+		<input type="text" id="txtUser" class="form-control" name="txtUser" placeholder="Username" required>
 		<label class="form-check-label" for="txtUser">Username</label>
 		<div class="valid-feedback">Valid.</div>
     	<div class="invalid-feedback">Username can't be blank!</div>
 	</div>
 	<br>
-	<div class="form-group">
-		<input type="password" id="txtPassword" class="form-control form-check-input" name="txtPassword" placeholder="Password" required>
+	<div class="form-group form-check">
+		<input type="password" id="txtPassword" class="form-control" name="txtPassword" placeholder="Password" required>
 		<label class="form-check-label" for="txtPassword">Password</label>
 		<div class="valid-feedback">Valid.</div>
    	 	<div class="invalid-feedback">Password can't be blank!</div>
