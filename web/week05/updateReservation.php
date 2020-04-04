@@ -73,7 +73,13 @@ $db = get_db();
     </div>";
     ?>
 
-    <script>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <br>
+    <br>
+    </form>
+  </div>
+
+  <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
         $('#checkInDate').datepicker({
             uiLibrary: 'bootstrap4',
@@ -91,12 +97,6 @@ $db = get_db();
             }
         });
     </script>
-
-    <button type="submit" class="btn btn-primary">Update</button>
-    <br>
-    <br>
-    </form>
-  </div>
 
     
   <!-- Site footer -->
