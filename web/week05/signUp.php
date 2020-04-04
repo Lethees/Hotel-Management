@@ -30,7 +30,7 @@
 
 	<div class="container">
 
-<form id="mainForm" action="createAccount.php" method="POST">
+<form id="mainForm" action="createAccount.php" method="POST" class="was-validated">
 	<div class="form-group form-check">
 		<input type="text" id="txtUser" class="form-control form-check-input" name="txtUser" placeholder="Username" required>
 		<label class="form-check-label" for="txtUser">Username</label>
@@ -52,8 +52,11 @@
         <div class="invalid-feedback">Check this checkbox to continue.</div>
       </label>
     </div>
+	<br>
+	<div class="form-group" style="float: right;">
 	<button type="submit" class="btn btn-primary">Create Account</button>
 	<button class="btn btn-secondary" onclick="window.location.href = 'management.php';">Return to the Menu</button> 
+	</div>
 </form>
 
 

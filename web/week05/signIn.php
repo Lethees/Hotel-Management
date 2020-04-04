@@ -90,7 +90,7 @@ if ($badLogin)
 
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="signIn.php" method="POST">
+<form id="mainForm" action="signIn.php" method="POST" class="was-validated">
 	<div class="form-group form-check">
 		<input type="text" id="txtUser" class="form-control form-check-input" name="txtUser" placeholder="Username" required>
 		<label class="form-check-label" for="txtUser">Username</label>
@@ -109,13 +109,16 @@ if ($badLogin)
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
-	<div>
+	</div>
+	<div class="form-group">
 	<button type="submit" class="btn btn-primary">Sign In</button>
+	</div>
 </form>
 
 <br /><br />
-
+<div>
 Don't have an account yet? <a href="signUp.php">Sign up</a> for a new account.
+</div>
 
 </div>
 <?
