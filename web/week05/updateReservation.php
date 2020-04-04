@@ -56,7 +56,7 @@ $db = get_db();
 
     <div class='form-group'>
         <label for='reservationID'>Reservation ID:</label>
-        <input type='text' class='form-control' id='reservationID' name='reservationID' disabled>$reservation_id
+        <input type='text' class='form-control' id='reservationID' name='reservationID'>$reservation_id
         <div class='valid-feedback'>Valid.</div>
       </div>
 
