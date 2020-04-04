@@ -65,8 +65,8 @@ $db = get_db();
       </div>
     
     <div class='form-group'>
-        Check-In Date: <input width='276' id='checkInDate' name='checkInDate' required />
-        Check-Out Date: <input width='276' id='checkOutDate' name='checkOutDate' required />
+        Check-In Date: <input width='276' id='checkInDate' name='checkInDate' value='$check_in_date' required />
+        Check-Out Date: <input width='276' id='checkOutDate' name='checkOutDate' value='$check_out_date' required />
 
     </div>
 
