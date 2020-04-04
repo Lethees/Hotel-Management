@@ -18,7 +18,8 @@ function get_db() {
 			// It would be better to put your local connection information
 			// into an environment variable on your local computer. That way
 			// it would work consistently regardless of whether the application
-			// were running locally or at heroku.
+      // were running locally or at heroku. 
+      
 		}
      $dbOpts = parse_url($dbUrl);
    
