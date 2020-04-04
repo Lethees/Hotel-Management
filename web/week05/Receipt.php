@@ -1,5 +1,5 @@
 <?php
-$guest_id = $_GET['id'];
+$reservation_id = $_GET['id'];
 require "connection.php";
 $db = get_db();
 ?>
@@ -62,7 +62,7 @@ Invoice
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
 <?php
-   foreach ($db->query("SELECT * FROM customer WHERE id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT * FROM customer WHERE id = $reservation_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
@@ -96,7 +96,7 @@ Invoice
     <tbody>
     
     <?php
-   foreach ($db->query("SELECT * FROM reservation WHERE customer_id = $guest_id") as $fRow)
+   foreach ($db->query("SELECT * FROM reservation WHERE customer_id = $reservation_id") as $fRow)
    {
     $reservation_id = $fRow["id"];   
     $check_in_date = $fRow["check_in_date"];

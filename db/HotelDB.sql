@@ -64,7 +64,13 @@ INSERT INTO admin (  username
                   ,  password)
           VALUES  (
                      'Lethe'
-                   , 'Lifangyi114');   
+                   , 'Lifangyi114');
+
+INSERT INTO admin (  username
+                  ,  password)
+          VALUES  (
+                     'test'
+                   , '123456');   
 
 INSERT INTO    customer ( first_name
                         , last_name
