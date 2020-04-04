@@ -56,13 +56,13 @@ $db = get_db();
 
     <div class='form-group'>
         <label for='reservationID'>Reservation ID:</label>
-        <input type='text' class='form-control' id='reservationID' name='reservationID'>$reservation_id
+        <input type='text' class='form-control' id='reservationID' name='reservationID' value='$reservation_id'>
         <div class='valid-feedback'>Valid.</div>
       </div>
 
       <div class='form-group'>
         <label for='RoomNumber'>Room Number: </label>
-        <input type='text' class='form-control' id='RoomNumber' name='RoomNumber'>$room_number
+        <input type='text' class='form-control' id='RoomNumber' name='RoomNumber' value='$room_number'>
         <div class='valid-feedback'>Valid.</div>
       </div>
     
