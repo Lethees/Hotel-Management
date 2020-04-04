@@ -55,7 +55,7 @@ $db = get_db();
     <form method="post" action="update.php">
 
     <div class="form-group">
-        <label for="reservationID">Customer ID:</label>
+        <label for="reservationID">Reservation ID:</label>
         <input type="text" class="form-control" id="reservationID" name="reservationID" disabled><?$reservation_id?>
         <div class="valid-feedback">Valid.</div>
       </div>
@@ -67,7 +67,7 @@ $db = get_db();
       </div>
     
     <div class="form-group">
-        Check-In Date: <input width="276" id="checkInDate" name="checkInDate" value="<?$check_in_date?>" />
+    <?php echo "Check-In Date: <input width='276' id='checkInDate' name='checkInDate' value='$check_in_date'"?> />
         Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate" value="<?$check_out_date?>" />
 
     </div>
