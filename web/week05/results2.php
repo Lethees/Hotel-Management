@@ -57,16 +57,16 @@ $first_name = $_POST['FirstName'];
    require "connection.php";
    $db = get_db();
    if ($first_name != "" && $last_name != "" && $phone != "" && $first_name != null && $last_name != null && $phone != null){
-    foreach ($db->query("SELECT r.id, r.check_in_date, r.check_out_date, r.room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE c.last_name = '$last_name' AND c.phone = '$phone' AND c.first_name = '$first_name'") as $fRow)
+    foreach ($db->query("SELECT r.id as rid, r.check_in_date as check_in_date, r.check_out_date as check_out_date, r.room_number as room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE c.last_name = '$last_name' AND c.phone = '$phone' AND c.first_name = '$first_name'") as $fRow)
     {   
      $first_name = $fRow["first_name"];
      $last_name = $fRow["last_name"];
        $phone = $fRow["phone"];
 
-       $rId = $fRow["r.id"];
-       $checkIn = $fRow["r.check_in_date"];
-       $checkOut = $fRow["r.check_out_date"];
-       $roomNumber = $fRow["r.room_number"];
+       $rId = $fRow["rid"];
+       $checkIn = $fRow["check_in_date"];
+       $checkOut = $fRow["check_out_date"];
+       $roomNumber = $fRow["room_number"];
 
        echo "console.log($first_name) console.log($checkIn)";
  
@@ -83,7 +83,7 @@ $first_name = $_POST['FirstName'];
      }
    }
    else{
-   foreach ($db->query("SELECT c.id, c.first_name, c.last_name, c.phone, r.id, r.check_in_date, r.check_out_date, r.room_number FROM customer c 
+   foreach ($db->query("SELECT (c.id, c.first_name, c.last_name, c.phone, r.id, r.check_in_date, r.check_out_date, r.room_number) FROM customer c 
    INNER JOIN reservation r ON c.id = r.customer_id WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
    { 
     $first_name = $fRow["c.first_name"];
