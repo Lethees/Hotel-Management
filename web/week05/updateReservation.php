@@ -54,6 +54,7 @@ $db = get_db();
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="update.php">
 
+    <?php echo "$reservation_id + $room_number + $check_in_date" ?>
     <div class="form-group">
         <label for="reservationID">Customer ID:</label>
         <input type="text" class="form-control" id="reservationID" name="reservationID" value=<?$reservation_id?> disabled >
