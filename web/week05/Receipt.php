@@ -97,7 +97,7 @@ Invoice
     <tbody>
     
     <?php
-   foreach ($db->query("SELECT * FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE r.id = $reservation_id") as $fRow)
+   foreach ($db->query("SELECT r.id, r.check_in_date, r.check_out_date, r.room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE r.id = $reservation_id") as $fRow)
    {
     $reservation_id = $fRow["r.id"];   
     $check_in_date = $fRow["r.check_in_date"];
