@@ -47,7 +47,7 @@
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field, e.g "202-595-4442"</div>
     </div>
-    <div class="form-group form-check ">
+    <div class="form-group form-check">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
         <div class="valid-feedback">Valid.</div>

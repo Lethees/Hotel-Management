@@ -97,28 +97,29 @@ if ($badLogin)
 		<div class="valid-feedback">Valid.</div>
     	<div class="invalid-feedback">Username can't be blank!</div>
 	</div>
-	<br>
+
 	<div class="form-group form-check">
 		<label class="form-check-label" for="txtPassword">Password</label>
 		<input type="password" id="txtPassword" class="form-control" name="txtPassword" placeholder="Password" required>
 		<div class="valid-feedback">Valid.</div>
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
-	<br>
+
 	<div class="form-group" style="float: right;">
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
 	</div>
-	<div class="form-group">
+	<div class="form-group" style="float: right;">
 	<button type="submit" class="btn btn-primary">Sign In</button>
 	</div>
 </form>
 
-<br /><br />
-<div>
+<br />
+<div style="float: right;">
 Don't have an account yet? <a href="signUp.php">Sign up</a> for a new account.
 </div>
+<br />
 
 </div>
 <?

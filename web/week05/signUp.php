@@ -37,14 +37,14 @@
 		<div class="valid-feedback">Valid.</div>
     	<div class="invalid-feedback">Username can't be blank!</div>
 	</div>
-	<br>
+
 	<div class="form-group form-check">
 	<label class="form-check-label" for="txtPassword">Password</label>
 		<input type="password" id="txtPassword" class="form-control form-check-input" name="txtPassword" placeholder="Password" required>
 		<div class="valid-feedback">Valid.</div>
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
-	<br>
+
 	<div class="form-group form-check" style="float: right;">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
@@ -52,15 +52,14 @@
         <div class="invalid-feedback">Check this checkbox to continue.</div>
       </label>
     </div>
-	<br>
+
 	<div class="form-group" style="float: right;">
 	<button type="submit" class="btn btn-primary">Create Account</button>
 	<button class="btn btn-secondary" onclick="window.location.href = 'management.php';">Return to the Menu</button> 
 	</div>
 </form>
 
-
-</div>
+<br>
 <?
 	require("footer.php");
 ?>
