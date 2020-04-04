@@ -95,7 +95,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 						</div>
 						<input type="password" class="form-control" name="txtPassword" placeholder="password">
 					</div>
-					<div class="row align-items-center remember">
+					<div class="row align-items-center remember" style="float: right;">
 						<input type="checkbox">Remember Me
 					</div>
 					<?php
