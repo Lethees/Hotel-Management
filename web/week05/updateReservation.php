@@ -56,7 +56,7 @@ $db = get_db();
 
     <div class='form-group'>
         <label for='reservationID'>Reservation ID:</label>
-        <input type='text' class='form-control' id='reservationID' name='reservationID' value='$reservation_id' disabled>
+        <input type='hidden' class='form-control' id='reservationID' name='reservationID' value='$reservation_id'>
         <div class='valid-feedback'>Valid.</div>
       </div>
 
@@ -79,6 +79,7 @@ $db = get_db();
   </div>";
 
   ?>
+  <br>
 
   <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
