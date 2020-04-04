@@ -11,6 +11,6 @@ catch (Exception $ex){
 	die();  
 }
 header("Location: results3.php");
- 
+
 die();
 ?>

@@ -2,6 +2,23 @@
 $last_name = $_POST['LastName'];
 $phone = $_POST['phone'];
 $first_name = $_POST['FirstName'];
+
+session_start();
+
+if (isset($_SESSION['LastName']))
+{
+	$last_name = $_SESSION['LastName'];
+}
+
+if (isset($_SESSION['phone']))
+{
+	$phone = $_SESSION['phone'];
+}
+
+if (isset($_SESSION['FirstName']))
+{
+	$first_name = $_SESSION['FirstName'];
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,7 +89,7 @@ $first_name = $_POST['FirstName'];
      echo "<td>$checkOut</td>";
      echo "<td>$roomNumber</td>";
      echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
-     echo "<td><a  href='<?=myfunction($rId)?>'>Delete</a></td>";
+     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
      echo "</tr>";
      }
    }
@@ -97,12 +114,9 @@ $first_name = $_POST['FirstName'];
     echo "<td>$roomNumber</td>";
     echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
-    echo "</tr>"; 
+    echo "</tr>";
+    
   }
-}
-myfunction($reservation_id){
-    $delete = $db->prepare("DELETE FROM reservation WHERE id = $reservation_id");
-    $delete->execute();
 }  
 
             ?>
