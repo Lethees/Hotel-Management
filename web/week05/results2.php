@@ -98,7 +98,7 @@ $first_name = $_POST['FirstName'];
       $checkOut = $fROW["r.check_out_date"];
       $roomNumber = $fROW["r.room_number"];
 
-      echo "console.log($id) console.log($first_name) console.log($checkIn)";
+      echo "$id + $first_name + $checkIn";
 
     echo "<tr>"; 
     echo "<td>$first_name</td>";
