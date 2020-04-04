@@ -3,7 +3,7 @@ $username = $_POST['txtUser'];
 $password = $_POST['txtPassword'];
 
 if (!isset($username) || $username == ""
-	|| !isset($password) || $password == "" || !isset($referal) || $referal == "")
+	|| !isset($password) || $password == "")
 {
 	header("Location: signUp.php");
 	die(); // we always include a die after redirects.
