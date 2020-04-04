@@ -44,7 +44,7 @@
 					</div>
 					
 					<div class="row align-items-center remember" style="float: left;">
-						<input type="checkbox">I agree with the <pre> </pre><a href="#">Pine Inn Security Agreement</a>
+						<input type="checkbox" required>I agree with the <pre> </pre><a href="#">Pine Inn Security Agreement</a>
 					</div>
 
 					<br>
