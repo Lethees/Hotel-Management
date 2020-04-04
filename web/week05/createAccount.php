@@ -20,7 +20,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 require("connection.php");
 $db = get_db();
 
-$query = 'INSERT INTO login(username, password) VALUES(:username, :password)';
+$query = 'INSERT INTO admin (username, password) VALUES(:username, :password)';
 $statement = $db->prepare($query);
 $statement->bindValue(':username', $username);
 
