@@ -56,7 +56,7 @@ $db = get_db();
 
     <div class='form-group'>
         <label for='reservationID'>Reservation ID:</label>
-        <input type='text' class='form-control' id='reservationID' name='reservationID' value='$reservation_id'>
+        <input type='text' class='form-control' id='reservationID' name='reservationID' value='$reservation_id' disabled>
         <div class='valid-feedback'>Valid.</div>
       </div>
 
@@ -70,14 +70,15 @@ $db = get_db();
         Check-In Date: <input width='276' id='checkInDate' name='checkInDate' />
         Check-Out Date: <input width='276' id='checkOutDate' name='checkOutDate' />
 
-    </div>";
-    ?>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Update</button>
+    <button type='submit' class='btn btn-primary'>Update</button>
     <br>
     <br>
     </form>
-  </div>
+  </div>";
+
+  ?>
 
   <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());

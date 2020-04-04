@@ -9,8 +9,8 @@ $db = get_db();
 
 try
 {
-	$statement = $db->prepare("UPDATE reservation SET room_number = '$RoomNumber', check_in_date = '$checkInDate', check_out_date = '$checkOutDate' WHERE id= $id");
-	$statement->execute();
+	$update = $db->prepare("UPDATE reservation SET room_number = '$RoomNumber', check_in_date = '$checkInDate', check_out_date = '$checkOutDate' WHERE id= $id");
+	$update->execute();
 	
 	// SELECT c.relname FROM pg_class c WHERE c.relkind = 'S';   -- display all sequences
 	// get id of last inserted row - save in $userId
