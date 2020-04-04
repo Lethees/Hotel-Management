@@ -92,20 +92,20 @@ if ($badLogin)
 
 <form id="mainForm" action="signIn.php" method="POST" class="was-validated">
 	<div class="form-group form-check">
+	<label class="form-check-label" for="txtUser">Username</label>
 		<input type="text" id="txtUser" class="form-control" name="txtUser" placeholder="Username" required>
-		<label class="form-check-label" for="txtUser">Username</label>
 		<div class="valid-feedback">Valid.</div>
     	<div class="invalid-feedback">Username can't be blank!</div>
 	</div>
 	<br>
 	<div class="form-group form-check">
-		<input type="password" id="txtPassword" class="form-control" name="txtPassword" placeholder="Password" required>
 		<label class="form-check-label" for="txtPassword">Password</label>
+		<input type="password" id="txtPassword" class="form-control" name="txtPassword" placeholder="Password" required>
 		<div class="valid-feedback">Valid.</div>
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
 	<br>
-	<div class="form-group justify-content-end" style="float: right;">
+	<div class="form-group" style="float: right;">
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
