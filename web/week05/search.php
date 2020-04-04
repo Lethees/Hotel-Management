@@ -57,8 +57,8 @@
     <button type="submit" class="btn btn-dark">Send Confirmation</button>
     <br>
     <br>
+    </form>
   </div>
-</form>
 
     
   <!-- Site footer -->

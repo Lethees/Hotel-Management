@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS roomType;
 DROP TABLE IF EXISTS room;
 DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS admin;
+DROP TABLE IF EXISTS login;
 
 
 CREATE TABLE customer ( 
@@ -44,6 +46,25 @@ CREATE TABLE parking (
 ,   license_plate  VARCHAR(50) NOT NULL
 ,   customer_id    INT         NOT NULL REFERENCES customer(id)
 );
+
+CREATE TABLE admin (
+    id             SERIAL      NOT NULL PRIMARY KEY
+,   username       VARCHAR(50) UNIQUE NOT NULL
+,   password       VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE login
+(
+	id SERIAL PRIMARY KEY NOT NULL,
+	username VARCHAR(80) UNIQUE NOT NULL,
+	password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO admin (  username
+                  ,  password)
+          VALUES  (
+                     'Admin_123'
+                   , 'HotelAdmin');    
 
 INSERT INTO    customer ( first_name
                         , last_name
