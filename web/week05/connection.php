@@ -4,7 +4,7 @@ function get_db() {
    try
    {
      $dbUrl = getenv('DATABASE_URL');
-     
+   
      $dbOpts = parse_url($dbUrl);
    
      $dbHost = $dbOpts["host"];
