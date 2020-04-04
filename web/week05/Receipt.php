@@ -62,7 +62,7 @@ Invoice
 <div class="col-sm-6">
 <h6 class="mb-3">To:</h6>
 <?php
-   foreach ($db->query("SELECT c.first_name as first_name, c.last_name as last_name, c.phone as phone FROM customer c INNER JOIN reservation r ON c.id = r.customer id WHERE r.id = $reservation_id") as $fRow)
+   foreach ($db->query("SELECT c.first_name as first_name, c.last_name as last_name, c.phone as phone FROM customer c INNER JOIN reservation r ON c.id = r.customer_id WHERE r.id = $reservation_id") as $fRow)
    {
     $first_name = $fRow["first_name"];   
     $last_name = $fRow["last_name"];
