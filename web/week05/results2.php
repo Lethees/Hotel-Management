@@ -45,6 +45,9 @@ $first_name = $_POST['FirstName'];
         <th>Last Name</th>
         <th>Phone Number</th>
         <th>Reservation ID</th>
+        <th>Check-In</th>
+        <th>Check-Out</th>
+        <th>Room#</th>
         <th>Print Receipt</th>
       </tr>
     </thead>
@@ -72,25 +75,35 @@ $first_name = $_POST['FirstName'];
      echo "<td>$last_name</td>";
      echo "<td>$phone</td>";
      echo "<td>$rId</td>";
+     echo "<td>$checkIn</td>";
+     echo "<td>$checkOut</td>";
      echo "<td>$roomNumber</td>";
      echo "<td><a href='Receipt.php?id=$rId'>Print Receipt</a></td>";
      echo "</tr>";
      }
    }
    else{
-   foreach ($db->query("SELECT id, first_name, last_name, phone FROM customer 
-   WHERE last_name = '$last_name' OR phone = '$phone' OR first_name = '$first_name'") as $fRow)
+   foreach ($db->query("SELECT c.id, c.first_name, c.last_name, c.phone, r.id, r.check_in_date, r.check_out_date, r.room_number FROM customer c 
+   INNER JOIN reservation r ON c.id = r.customer_id WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
    {
-    $id = $fRow["id"];   
-    $first_name = $fRow["first_name"];
-    $last_name = $fRow["last_name"];
-      $phone = $fRow["phone"];
+    $id = $fRow["c.id"];   
+    $first_name = $fRow["c.first_name"];
+    $last_name = $fRow["c.last_name"];
+      $phone = $fRow["c.phone"];
 
-    echo "<tr>";
-    echo "<td>$id</td>"; 
+      $rId = $fROW["r.id"];
+      $checkIn = $fROW["r.check_in_date"];
+      $checkOut = $fROW["r.check_out_date"];
+      $roomNumber = $fROW["r.room_number"];
+
+    echo "<tr>"; 
     echo "<td>$first_name</td>";
     echo "<td>$last_name</td>";
     echo "<td>$phone</td>";
+    echo "<td>$rId</td>";
+    echo "<td>$checkIn</td>";
+    echo "<td>$checkOut</td>";
+    echo "<td>$roomNumber</td>";
     echo "<td><a href='Receipt.php?id=$rId'>Print Receipt</a></td>";
     echo "</tr>";
     
