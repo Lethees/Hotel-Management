@@ -64,7 +64,13 @@ INSERT INTO admin (  username
                   ,  password)
           VALUES  (
                      'Admin_123'
-                   , 'HotelAdmin');    
+                   , 'HotelAdmin');
+
+INSERT INTO admin (  username
+                  ,  password)
+          VALUES  (
+                     'test'
+                   , '12345678');       
 
 INSERT INTO    customer ( first_name
                         , last_name
