@@ -75,10 +75,7 @@ $first_name = $_POST['FirstName'];
      }
    }
    else{
-   foreach ($db->query("SELECT (c.id as cid, c.first_name as first_name , c.last_name as last_name, c.phone 
-   as phone, r.check_in_date as check_in_date, r.id as rid, r.check_out_date as check_out_date, r.room_number 
-   as room_number) FROM customer c INNER JOIN reservation r ON c.id = r.customer_id 
-   WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
+   foreach ($db->query("SELECT c.id as cid, c.first_name as first_name , c.last_name as last_name, c.phone as phone, r.check_in_date as check_in_date, r.id as rid, r.check_out_date as check_out_date, r.room_number as room_number FROM customer c INNER JOIN reservation r ON c.id = r.customer_id WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name'") as $fRow)
    { 
     $first_name = $fRow["first_name"];
     $last_name = $fRow["last_name"];
