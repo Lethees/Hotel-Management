@@ -1,5 +1,5 @@
 <?php
-$id = $_POST['reservationID']
+$id = $_POST['reservationID'];
 $RoomNumber = $_POST['RoomNumber'];
 $checkInDate = $_POST['checkInDate'];
 $checkOutDate = $_POST['checkOutDate'];
