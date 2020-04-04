@@ -41,19 +41,19 @@
 
     <div class="form-group">
         <label for="customerID">Customer ID:</label>
-        <input type="text" class="form-control" id="customerID" name="customerID" >
+        <input type="text" class="form-control" id="customerID" name="customerID" required>
         <div class="valid-feedback">Valid.</div>
       </div>
 
       <div class="form-group">
         <label for="RoomNumber">Room Number:</label>
-        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" >
+        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" required >
         <div class="valid-feedback">Valid.</div>
       </div>
     
     <div class="form-group">
-        Check-In Date: <input width="276" id="checkInDate" name="checkInDate" />
-        Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate"  />
+        Check-In Date: <input width="276" id="checkInDate" name="checkInDate" required />
+        Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate" required />
 
     </div>
 

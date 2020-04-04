@@ -49,10 +49,10 @@ $db = get_db();
         }
     ?>
 
-<?php echo "<div class='container'>
+<div class="container">
      <h2>Update Record</h2>
-     <button class='btn btn-outline-dark' id='btnB' onclick='window.location.href = 'management.php';'>Return to the Menu</button>
-    <form method='post' action='update.php'>
+     <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
+     <?php echo "   <form method='post' action='update.php'>
 
     <div class='form-group'>
         <label for='reservationID'>Reservation ID:</label>
@@ -62,13 +62,13 @@ $db = get_db();
 
       <div class='form-group'>
         <label for='RoomNumber'>Room Number: </label>
-        <input type='text' class='form-control' id='RoomNumber' name='RoomNumber' value='$room_number'>
+        <input type='text' class='form-control' id='RoomNumber' name='RoomNumber' value='$room_number' required>
         <div class='valid-feedback'>Valid.</div>
       </div>
     
     <div class='form-group'>
-        Check-In Date: <input width='276' id='checkInDate' name='checkInDate' />
-        Check-Out Date: <input width='276' id='checkOutDate' name='checkOutDate' />
+        Check-In Date: <input width='276' id='checkInDate' name='checkInDate' required />
+        Check-Out Date: <input width='276' id='checkOutDate' name='checkOutDate' required />
 
     </div>
 
