@@ -57,8 +57,7 @@ $first_name = $_POST['FirstName'];
    require "connection.php";
    $db = get_db();
    if ($first_name != "" && $last_name != "" && $phone != "" && $first_name != null && $last_name != null && $phone != null){
-    foreach ($db->query("SELECT r.id, r.check_in_date, r.check_out_date, r.room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id 
-    WHERE c.last_name = '$last_name' AND c.phone = '$phone' AND c.first_name = '$first_name'") as $fRow)
+    foreach ($db->query("SELECT r.id, r.check_in_date, r.check_out_date, r.room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE c.last_name = '$last_name' AND c.phone = '$phone' AND c.first_name = '$first_name'") as $fRow)
     {   
      $first_name = $fRow["first_name"];
      $last_name = $fRow["last_name"];
