@@ -47,31 +47,30 @@ $db = get_db();
         $check_out_date = $fRow["check_out_date"];
           $room_number = $fRow["room_number"];
         }
+    ?>
        
-    echo "<div class="container">
+    <div class="container">
      <h2>Update</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
     <form method="post" action="update.php">
 
     <div class="form-group">
         <label for="reservationID">Customer ID:</label>
-        <input type="text" class="form-control" id="reservationID" name="reservationID" value=$reservation_id >
+        <input type="text" class="form-control" id="reservationID" name="reservationID" value=<?$reservation_id?> disabled >
         <div class="valid-feedback">Valid.</div>
       </div>
 
       <div class="form-group">
         <label for="RoomNumber">Room Number: </label>
-        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" value="$room_number" >
+        <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" value="<?$room_number?>" >
         <div class="valid-feedback">Valid.</div>
       </div>
     
     <div class="form-group">
-        Check-In Date: <input width="276" id="checkInDate" name="checkInDate" value="$check_in_date" />
-        Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate" value="$check_out_date" />
+        Check-In Date: <input width="276" id="checkInDate" name="checkInDate" value="<?$check_in_date?>" />
+        Check-Out Date: <input width="276" id="checkOutDate" name="checkOutDate" value="<?$check_out_date?>" />
 
-    </div>";
-
-    ?>
+    </div>
 
     <script>
         var today = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
