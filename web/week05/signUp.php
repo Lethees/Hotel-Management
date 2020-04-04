@@ -53,6 +53,7 @@
       </label>
     </div>
 	<button type="submit" class="btn btn-primary">Create Account</button>
+	<button class="btn btn-secondary" onclick="window.location.href = 'management.php';">Return to the Menu</button> 
 </form>
 
 
