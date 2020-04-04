@@ -59,7 +59,7 @@ $first_name = $_POST['FirstName'];
    if ($first_name != "" && $last_name != "" && $phone != "" && $first_name != null && $last_name != null && $phone != null){
     foreach ($db->query("SELECT r.id as rid, r.check_in_date as check_in_date, r.check_out_date as check_out_date, r.room_number 
     as room_number FROM reservation r INNER JOIN customer c ON r.customer_id = c.id WHERE c.last_name = '$last_name' 
-    AND c.phone = '$phone' AND c.first_name = '$first_name' GROUP BY first_name") as $fRow)
+    AND c.phone = '$phone' AND c.first_name = '$first_name' GROUP BY c.first_name") as $fRow)
     {   
        $rId = $fRow["rid"];
        $checkIn = $fRow["check_in_date"];
@@ -84,7 +84,7 @@ $first_name = $_POST['FirstName'];
    foreach ($db->query("SELECT (c.id as cid, c.first_name as first_name , c.last_name as last_name, c.phone 
    as phone, r.id as rid, r.check_in_date as check_in_date, r.check_out_date as check_out_date, r.room_number 
    as room_number) FROM customer c INNER JOIN reservation r ON c.id = r.customer_id 
-   WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name' GROUP BY first_name") as $fRow)
+   WHERE c.last_name = '$last_name' OR c.phone = '$phone' OR c.first_name = '$first_name' GROUP BY c.first_name") as $fRow)
    { 
     $first_name = $fRow["first_name"];
     $last_name = $fRow["last_name"];
