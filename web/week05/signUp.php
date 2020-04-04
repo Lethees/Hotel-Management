@@ -45,7 +45,7 @@
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
 	<br>
-	<div class="form-group form-check ">
+	<div class="form-group form-check" style="float: right;">
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember" required>I agree the <a href="#">Pine Inn Security Agreement</a>
         <div class="valid-feedback">Valid.</div>
