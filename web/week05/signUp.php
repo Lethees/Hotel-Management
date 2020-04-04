@@ -49,23 +49,16 @@ if ($badLogin)
 }
 ?>
 					<div class="row align-items-center remember" style="float: left;">
-						<input type="checkbox">I agree the <a href="#">Pine Inn Security Agreement</a>
+						<input type="checkbox">I agree the  <a href="#"> Pine Inn Security Agreement</a>
 					</div>
 
+					<br>
 					<br>
 	
 					<div class="form-group">
 						<input type="submit" value="Login" class="btn float-right login_btn btn-warning">
 					</div>
 				</form>
-			</div>
-			<div class="card-footer">
-				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>
 			</div>
 		</div>
 	</div>
