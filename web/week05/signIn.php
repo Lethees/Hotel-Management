@@ -90,7 +90,7 @@ if ($badLogin)
 
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="createAccount.php" method="POST">
+<form id="mainForm" action="signIn.php" method="POST">
 	<div class="form-group form-check">
 		<input type="text" id="txtUser" class="form-control form-check-input" name="txtUser" placeholder="Username" required>
 		<label class="form-check-label" for="txtUser">Username</label>
@@ -105,17 +105,17 @@ if ($badLogin)
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
 	<br>
-	<div class="form-group">
-	<button type="submit" class="btn btn-primary">Sign In</button>
+	<div class="form-group justify-content-end">
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
 	<div>
+	<button type="submit" class="btn btn-primary">Sign In</button>
 </form>
 
 <br /><br />
 
-Or <a href="signUp.php">Sign up</a> for a new account.
+Don't have an account yet? <a href="signUp.php">Sign up</a> for a new account.
 
 </div>
 <?

@@ -3,7 +3,7 @@ $username = $_POST['txtUser'];
 $password = $_POST['txtPassword'];
 
 if (!isset($username) || $username == ""
-	|| !isset($password) || $password == "")
+	|| !isset($password) || $password == "" || !isset($referal) || $referal == "")
 {
 	header("Location: signUp.php");
 	die(); // we always include a die after redirects.
@@ -15,6 +15,7 @@ $username = htmlspecialchars($username);
 
 // Get the hashed password.
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 
 // Connect to the database
 require("connection.php");
