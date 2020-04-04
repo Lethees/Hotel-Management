@@ -51,7 +51,7 @@
 					<br>
 	
 					<div class="form-group">
-						<input type="submit" value="Create Account" class="btn float-right login_btn btn-warning">
+						<input type="submit" value="Register" class="btn float-right login_btn btn-warning">
 					</div>
 				</form>
 			</div>
