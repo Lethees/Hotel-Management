@@ -101,7 +101,7 @@ if ($badLogin)
 	echo "Incorrect username or password!<br /><br />\n";
 }
 ?>
-					<div class="row align-items-center remember" style="float: right;">
+					<div class="row align-items-center remember" style="float: left;">
 						<input type="checkbox">Remember Me
 					</div>
 
