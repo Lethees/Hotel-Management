@@ -55,9 +55,7 @@ $db = get_db();
      <?php echo "   <form method='post' action='update.php'>
 
     <div class='form-group'>
-        <label for='reservationID'>Reservation ID:</label>
         <input type='hidden' class='form-control' id='reservationID' name='reservationID' value='$reservation_id'>
-        <div class='valid-feedback'>Valid.</div>
       </div>
 
       <div class='form-group'>

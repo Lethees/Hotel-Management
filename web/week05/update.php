@@ -9,8 +9,13 @@ $db = get_db();
 
 try
 {
-	$update = $db->prepare("UPDATE reservation SET room_number = '$RoomNumber', check_in_date = '$checkInDate', check_out_date = '$checkOutDate' WHERE id = $id");
-	$update->execute();
+	$update = $db->prepare("UPDATE reservation SET room_number = ?, check_in_date = ?, check_out_date = ? WHERE id = ?");
+	$update->execute([
+		$RoomNumber,
+		$checkInDate,
+		$checkOutDate,
+		$id,
+	]);
 }
 catch (Exception $ex)
 {
