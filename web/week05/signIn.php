@@ -105,7 +105,7 @@ if ($badLogin)
    	 	<div class="invalid-feedback">Password can't be blank!</div>
 	</div>
 	<br>
-	<div class="form-group justify-content-end">
+	<div class="form-group justify-content-end" style="float: right;">
 	<label class="form-check-label">
       <input class="form-check-input" type="checkbox"> Remember me
     </label>
