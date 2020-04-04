@@ -2,23 +2,6 @@
 $last_name = $_POST['LastName'];
 $phone = $_POST['phone'];
 $first_name = $_POST['FirstName'];
-
-session_start();
-
-if (isset($_SESSION['LastName']))
-{
-	$last_name = $_SESSION['LastName'];
-}
-
-if (isset($_SESSION['phone']))
-{
-	$phone = $_SESSION['phone'];
-}
-
-if (isset($_SESSION['FirstName']))
-{
-	$first_name = $_SESSION['FirstName'];
-}
 ?>
 <!DOCTYPE html>
 <html>

@@ -10,7 +10,7 @@ catch (Exception $ex){
     echo "Error with DB. Details: $ex";
 	die();  
 }
-header("Location: results3.php");
+header("Location: search3.php");
 
 die();
 ?>

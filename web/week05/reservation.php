@@ -40,13 +40,13 @@
     <form method="post" action="insertNewReservation.php">
 
     <div class="form-group">
-        <label for="validId">Customer ID:</label>
+        <label for="customerID">Customer ID:</label>
         <input type="text" class="form-control" id="customerID" name="customerID" >
         <div class="valid-feedback">Valid.</div>
       </div>
 
       <div class="form-group">
-        <label for="validId">Room Number:</label>
+        <label for="RoomNumber">Room Number:</label>
         <input type="text" class="form-control" id="RoomNumber" name="RoomNumber" >
         <div class="valid-feedback">Valid.</div>
       </div>
