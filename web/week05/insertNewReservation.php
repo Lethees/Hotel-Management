@@ -1,5 +1,5 @@
 <?php
-$customerID = $_POST['customerID'];
+$id = $_POST['reservationID']
 $RoomNumber = $_POST['RoomNumber'];
 $checkInDate = $_POST['checkInDate'];
 $checkOutDate = $_POST['checkOutDate'];
@@ -9,13 +9,8 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO reservation (check_in_date, check_out_date, customer_id, room_number) 
-	VALUES (:checkInDate, :checkOutDate, :customerID, :RoomNumber)';
+	$query = "UPDATE reservation SET room_number = $RoomNumber, check_in_date = $checkInDate, check_out_date = $checkOutDate WHERE id= $id";
 	$statement = $db->prepare($query);
-	$statement->bindValue(':checkInDate', $checkInDate);
-	$statement->bindValue(':checkOutDate', $checkOutDate);
-  $statement->bindValue(':customerID', $customerID);
-  $statement->bindValue(':RoomNumber', $RoomNumber);
 	$statement->execute();
 	
 	// SELECT c.relname FROM pg_class c WHERE c.relkind = 'S';   -- display all sequences
@@ -27,7 +22,7 @@ catch (Exception $ex)
 	echo "Error with DB. Details: $ex";
 	die();
 }
-header("Location: management.php");
+header("Location: search3.php");
 
 die(); 
 
