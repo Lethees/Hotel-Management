@@ -4,6 +4,17 @@
   $button = array("dark", "info", "success", "primary", "secondary", "warning", "success");
   $web = array("guestList.php", "roomList.php", "search.php", "Register.php", "reservation.php", "parking.php", "search2.php");
 
+  session_start();
+
+if (isset($_SESSION['username']))
+{
+	$username = $_SESSION['username'];
+}
+else
+{
+	header("Location: signIn.php");
+	die(); // we always include a die after redirects.
+}
 ?>
 <!DOCTYPE html>
 <html>
