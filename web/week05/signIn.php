@@ -23,14 +23,10 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 
 	$result = $statement->execute();
 
-	console.log("$username");
-
 	if ($result)
 	{
 		$row = $statement->fetch();
 		$hashedPasswordFromDB = $row['password'];
-
-		console.log("$hasedPasswordFromDB");
 
 		// now check to see if the hashed password matches
 		if (password_verify($password, $hashedPasswordFromDB))
