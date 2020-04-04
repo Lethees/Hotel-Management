@@ -47,8 +47,7 @@ $db = get_db();
         $check_out_date = $fRow["check_out_date"];
           $room_number = $fRow["room_number"];
         }
-        ?>
-<?php
+       
     echo "<div class="container">
      <h2>Update</h2>
      <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'management.php';">Return to the Menu</button>
