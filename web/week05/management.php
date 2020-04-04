@@ -1,5 +1,5 @@
 <?php
-  $actions = array("Guest List", "Room List", "Search Guest", "New Guest", "Reservation", "New Parking", "Print Receipt", "Update & Delete");
+  $actions = array("Guest List", "Room List", "Search Guest", "New Guest", "Reservation", "New Parking", "Print Receipt", "Update & Del");
   $image = array("1.png", "2.png", "3.png", "4.png", "5.jpg", "6.png", "7.png", "8.png");
   $button = array("dark", "info", "success", "primary", "secondary", "warning", "success", "primary");
   $web = array("guestList.php", "roomList.php", "search.php", "Register.php", "reservation.php", "parking.php", "search2.php", "search3.php");
