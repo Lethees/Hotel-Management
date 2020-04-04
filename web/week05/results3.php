@@ -37,7 +37,7 @@ $first_name = $_POST['FirstName'];
 
     <div class="container">
   <h2>Results</h2>
-  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search2.php';">Return to the Searching Page</button>       
+  <button class="btn btn-outline-dark" id="btnB" onclick="window.location.href = 'search3.php';">Return to the Searching Page</button>       
   <table class="table table-dark table-hover">
     <thead>
       <tr>
@@ -72,7 +72,7 @@ $first_name = $_POST['FirstName'];
      echo "<td>$checkOut</td>";
      echo "<td>$roomNumber</td>";
      echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
-     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
+     echo "<td><a  href='<?=myfunction($rId)?>'>Delete</a></td>";
      echo "</tr>";
      }
    }
@@ -97,11 +97,21 @@ $first_name = $_POST['FirstName'];
     echo "<td>$roomNumber</td>";
     echo "<td><a href='updateReservation.php?id=$rId'>Update</a></td>";
     echo "<td><a href='deleteReservation.php?id=$rId'>Delete</a></td>";
-    echo "</tr>";
-    
+    echo "</tr>"; 
   }
 }  
 
+            ?>
+            <?php
+                myfunction($reservation_id){
+                    try{
+                        $delete = $db->prepare("DELETE FROM reservation WHERE id = $reservation_id");
+                        $delete->execute();
+                    }
+                    catch (Exception $ex){
+                        echo "Error with DB. Details: $ex"; 
+                    } 
+                }
             ?>
             </tbody>
   </table>
