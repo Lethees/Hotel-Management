@@ -1,1 +1,1 @@
-CS 313 PHP Base Code
+PHP Base Code
